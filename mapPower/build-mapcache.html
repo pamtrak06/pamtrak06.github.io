@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="layout.css" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css">
+        <link rel="stylesheet" href="ol.css" type="text/css">
+        <style>
+            .map {
+                height: 800px;
+                width: 100%;
+            }
+        </style>
+        <script src="ol.js" type="text/javascript">
+        </script>
+        <title>Mapcache configuration builder</title>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="./"><img src="./mapserver.png" width="12%">Mapcache builder</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span6">
+                <div id="map" class="map">
+                    <h4 id="title">Build a mapcache configuration from capabilities</h4>
+                    <p id="shortdesc">
+                        Example of parsing a WMS capabilities from <a href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=C0D9B3D8-1">WMS data source, </a>
+                        <a href="http://dd.meteo.gc.ca/doc/LICENCE_GENERAL.txt"></>(licence : environnement Canada)</a>
+                        to build a mapcache.xml configuration file for <a href="http://mapserver.org/fr/mapcache/">Mapcache</a>
+                        (tile WMTS server). 
+                    </p>
+                    <div id="docs">
+                        <p>
+                            The example build a mapcache tileset for a couple (layer,style).
+                            <br/>
+                            Everyone is free to use or reproduce any information contained on this website.
+                            <br/>
+                            Processing is provided as an example, the creator assumes no responsibility for any loss or damage caused by software and related codes.
+                            <br/>
+                            The objective is to provide an example of a WMS capabilities processing.
+                            <br/>
+                            The parameters used and the design are in no way a recommendation.
+                            Above defined rules used are :
+                            <ul>
+                                <li>
+                                    <b>mapacache.source</b>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <code>
+                                            .name = SOURCE + "_" + WMS.layer.name + "_" + WMS.style.name
+                                        </code>
+                                    </li>
+                                    <li>
+                                        .getmap.params.
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <code>
+                                                .FORMAT = image/png
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <code>
+                                                .LAYERS = WMS.layer.name
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <code>
+                                                .STYLES = WMS.style.name
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </ul>
+                                <li>
+                                    <b>mapacache.tileset</b>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <code>
+                                            .name = WMS.layer.name + "_" + WMS.style.name
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .source = SOURCE + "_" + WMS.layer.name + "_" + WMS.style.name
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .dimensions.dimension
+                                        </code>
+                                        <ul>
+                                            <li>
+                                                <code>
+                                                    .name="elevation" 
+                                                </code>
+                                            </li>
+                                            <li>
+                                                <code>
+                                                    .type = regex
+                                                </code>
+                                            </li>
+                                            <li>
+                                                <code>
+                                                    value=.* 
+                                                </code>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <code>
+                                                    .name="time" 
+                                                </code>
+                                            </li>
+                                            <li>
+                                                <code>
+                                                    .type = regex
+                                                </code>
+                                            </li>
+                                            <li>
+                                                <code>
+                                                    value=.* 
+                                                </code>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .cache = disk
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .format = PNG
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .grid = WGS84
+                                        </code>
+                                        : predefined grid in mapcache
+                                        <br/>
+                                        <code>
+                                            .grid = GoogleMapsCompatible
+                                        </code>
+                                        : predefined grid in mapcache
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .metatile = 5 5
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            .metabuffer = 10
+                                        </code>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </p>
+                        <p>
+                            See the <a href="mapcache.js" target="_blank">mapcache.js source</a>
+                            and <a href="WMSCapabilities.xml" target="_blank">WMSCapabilities.xml file</a>
+                            to see how this is done.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <input id="wmsUrl" type="text" readonly="true" style='width:90%'/>
+                        </td>
+                    </tr>
+                </table>
+                <tr>
+                    <td>
+                        <pre id="capabilities"></pre>
+                    </td>
+                </tr>
+            </div>
+        </div>
+        <script type="text/javascript">
+            
+            var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+            document.getElementById("wmsUrl").value = url;
+            
+            var parser = new ol.parser.ogc.WMSCapabilities(), result;
+            // TODO read capabilities from cross-origin server
+            //var file = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=getcapabilities';
+            var file = 'WMSCapabilities.xml';
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', file, true);
+            
+            /**
+             * onload handler for the XHR request.
+             */
+            xhr.onload = function(){
+                if (xhr.status == 200) {
+                    result = parser.read(xhr.responseXML);
+                    //document.getElementById('capabilities').innerHTML = window.JSON.stringify(result, undefined, 2);
+                    layers = result.capability.layers;
+                    
+                    var project = 'geometca';
+                    var mapcache = '';
+                    var tileset = '';
+                    var source = '';
+                    var concat = '&amp;';
+                    var idx = url.indexOf('?');
+                    if (idx == -1) {
+                        concat = '?';
+                    }
+                    
+                    mapcache = '&lt;?xml version="1.0" encoding="UTF-8"?&gt;\n';
+                    mapcache += '&lt;mapcache&gt;\n';
+                    mapcache += '  &lt;metadata&gt;\n';
+                    mapcache += '    &lt;title&gt;Mapcache service for url: ' + url + '&lt;/title&gt;\n';
+                    mapcache += '    &lt;abstract&gt;Render map services for url: ' + url + '&lt;/abstract&gt;\n';
+                    mapcache += '  &lt;/metadata&gt;\n\n';
+                    
+                    
+                    // Cache: Disk
+                    mapcache += '  &lt;cache name="disk" type="disk"&gt;\n';
+                    mapcache += '    &lt;base&gt;/tmp/' + project + '&lt;/base&gt;\n';
+                    mapcache += '    &lt;symlink_blank/&gt;\n';
+                    mapcache += '  &lt;/cache&gt;\n\n';
+                    
+                    // Cache: template
+                    mapcache += '  &lt;cache name="tmpl" type="disk"&gt;\n';
+                    mapcache += '    &lt;base&gt;/tmp' + project + '&lt;/base&gt;\n';
+                    mapcache += '    &lt;template&gt;/tmp/' + project + '/template/{tileset}#{grid}#{dim}/{z}/{x}/{y}.{ext}&lt;/template&gt;\n';
+                    mapcache += '  &lt;/cache&gt;\n\n';
+                    
+                    // Cache: sqlite
+                    mapcache += '  &lt;cache name="sqlite" type="sqlite3"&gt;\n';
+                    mapcache += '    &lt;dbfile&gt;/tmp/' + project + '/sqlitetiles.db&lt;/dbfile&gt;\n';
+                    mapcache += '    &lt;pragma name="key"&gt;value&lt;/pragma&gt;\n';
+                    mapcache += '  &lt;/cache&gt;\n\n';
+                    
+                    // Cache: MbTiles
+                    mapcache += '  &lt;cache name="mbtiles" type="mbtiles"&gt;\n';
+                    mapcache += '    &lt;dbfile&gt;/tmp/' + project + '/' + project + '.mbtiles&lt;/dbfile&gt;\n';
+                    mapcache += '  &lt;/cache&gt;\n\n';
+                    
+                    // Format: png
+                    mapcache += '  &lt;format name="PNGQ_FAST" type ="PNG"&gt;\n';
+                    mapcache += '    &lt;compression&gt;fast&lt;/compression&gt;\n';
+                    mapcache += '    &lt;colors&gt;256&lt;/colors&gt;\n';
+                    mapcache += '  &lt;/format&gt;\n\n';
+                    
+                    // Format: jpeg
+                    mapcache += '  &lt;format name="JPEG_75" type ="JPEG"&gt;\n';
+                    mapcache += '    &lt;quality&gt;75&lt;/quality&gt;\n';
+                    mapcache += '    &lt;photometric&gt;RGB&lt;/photometric&gt;\n';
+                    mapcache += '  &lt;/format&gt;\n\n';
+                    
+                    // Format: png
+                    mapcache += '  &lt;format name="PNG_BEST" type ="PNG"&gt;\n';
+                    mapcache += '    &lt;compression&gt;best&lt;/compression&gt;\n';
+                    mapcache += '  &lt;/format&gt;\n\n';
+                    
+                    // Format: mixed
+                    mapcache += '  &lt;format name="mixed" type="MIXED"&gt;\n';
+                    mapcache += '    &lt;transparent&gt;PNG_BEST&lt;/transparent&gt;\n';
+                    mapcache += '    &lt;opaque&gt;JPEG&lt;/opaque&gt;\n';
+                    mapcache += '  &lt;/format&gt;\n\n';
+                    
+                    for (var l = 0; l < layers.length; ++l) {
+                        layer = layers[l];
+                        
+                        console.log('Layer:' + layer.name);
+                        console.log('\tAvailable elevations: ' + layer.dimensions.elevation.values);
+                        console.log('\tAvailable times: ' + layer.dimensions.time.values);
+                        
+                        var arrayTab = layer.styles;
+                        for (var s = 0; s < arrayTab.length; ++s) {
+                            style = arrayTab[s];
+                            
+                            tileset = layer.name + '_' + style.name;
+                            source = 'SOURCE_' + layer.name + '_' + style.name;
+                            
+                            mapcache += '  &lt;!-- Source for layer: ' + layer.name + ', style: ' + style.name + ' --&gt;\n';
+                            mapcache += '  &lt;source name="' + source + '" type="wms"&gt;\n';
+                            mapcache += '    &lt;http&gt;\n';
+                            mapcache += '      &lt;url&gt;' + url + '&lt;/url&gt;\n';
+                            mapcache += '    &lt;/http&gt;\n';
+                            mapcache += '    &lt;getmap&gt;\n';
+                            mapcache += '      &lt;params&gt;\n';
+                            mapcache += '        &lt;FORMAT&gt;image/png&lt;/FORMAT&gt;\n';
+                            mapcache += '        &lt;LAYERS&gt;' + layer.name + '&lt;/LAYERS&gt;\n';
+                            mapcache += '        &lt;STYLES&gt;' + style.name + '&lt;/STYLES&gt;\n';
+                            mapcache += '      &lt;/params&gt;\n';
+                            mapcache += '    &lt;/getmap&gt;\n';
+                            mapcache += '  &lt;/source&gt;\n\n';
+                            
+                            mapcache += '  &lt;!-- Tileset for layer: ' + layer.name + ', style: ' + style.name + ' --&gt;\n';
+                            mapcache += '  &lt;tileset name="' + tileset + '"&gt;\n';
+                            mapcache += '    &lt;source&gt;' + source + '&lt;/source&gt;\n';
+                            mapcache += '    &lt;dimensions&gt;\n';
+                            mapcache += '      &lt;dimension type="regex" name="elevation" default="-1"&gt;.*&lt;/dimension&gt;\n';
+                            mapcache += '      &lt;dimension type="regex" name="time" default="2000-01-00T00:00:00Z"&gt;.*&lt;/dimension&gt;\n';
+                            mapcache += '    &lt;/dimensions&gt;\n';
+                            mapcache += '    &lt;cache&gt;disk&lt;/cache&gt;\n';
+                            mapcache += '    &lt;format&gt;PNG&lt;/format&gt;\n';
+                            
+                            // TODO : create grid for each srs
+                            //var projs = layer.srs;
+                            //for (var p = 0; p < projs.length; ++p) {
+                            //    proj = projs[p];
+                            //    mapcache += '    &lt;grid&gt;' + proj + '&lt;/grid&gt;\n';
+                            //}
+                            
+                            mapcache += '    &lt;grid&gt;WGS84&lt;/grid&gt;\n';
+                            mapcache += '    &lt;grid&gt;GoogleMapsCompatible&lt;/grid&gt;\n';
+                            mapcache += '    &lt;metatile&gt;5 5&lt;/metatile&gt;\n';
+                            mapcache += '    &lt;metabuffer&gt;10&lt;/metabuffer&gt;\n';
+                            mapcache += '  &lt;/tileset&gt;\n\n';
+                            
+                        }
+                    }
+                    
+                    // Services: wms
+                    mapcache += '  &lt;service type="wms" enabled="true"&gt;\n';
+                    for (var l = 0; l < layers.length; ++l) {
+                        layer = layers[l];
+                        var arrayTab = layer.styles;
+                        for (var s = 0; s < arrayTab.length; ++s) {
+                            style = arrayTab[s];
+                            tileset = layer.name + '_' + style.name;
+                            source = 'SOURCE_' + layer.name + '_' + style.name;
+                            mapcache += '    &lt;forwarding_rule name="RULE' + tileset + '"&gt\n';
+                            mapcache += '      &lt;param name="SERVICE" type="values"&gt;WMS&lt;/param&gt\n';
+                            mapcache += '      &lt;param name="LAYERS" type="values"&gt;' + layer.name + '&lt;/param&gt\n';
+                            mapcache += '      &lt;param name="STYLES" type="values"&gt;' + style.name + '&lt;/param&gt\n';
+                            mapcache += '      &lt;http&gt\n';
+                            mapcache += '        &lt;url&gt;' + url + concat + 'LAYERS=' + tileset + '&lt;/url&gt\n';
+                            mapcache += '      &lt;/http&gt\n';
+                            mapcache += '    &lt;/forwarding_rule&gt\n';
+                            
+                        }
+                    }
+                    mapcache += '    &lt;full_wms&gt;assemble&lt;/full_wms&gt\n';
+                    mapcache += '    &lt;resample_mode&gt;bilinear&lt;/resample_mode&gt\n';
+                    mapcache += '    &lt;format&gt;JPEG_75&lt;/format&gt\n';
+                    mapcache += '    &lt;maxsize&gt;4096&lt;/maxsize&gt\n';
+                    mapcache += '  &lt;/service&gt\n\n';
+                    
+                    // Services: wmts, tms, gmaps, ve, demo
+                    mapcache += '  &lt;service type="wmts" enabled="true"/&gt;\n';
+                    mapcache += '  &lt;service type="tms" enabled="true"/&gt;\n';
+                    mapcache += '  &lt;service type="kml" enabled="true"/&gt;\n';
+                    mapcache += '  &lt;service type="gmaps" enabled="true"/&gt;\n';
+                    mapcache += '  &lt;service type="ve" enabled="true"/&gt;\n';
+                    mapcache += '  &lt;service type="demo" enabled="true"/&gt;\n\n';
+                    
+                    // General parameters
+                    mapcache += '  &lt;errors&gt;report&lt;/errors&gt;\n';
+                    mapcache += '  &lt;lock_dir&gt;/tmp/' + project + '&lt;/lock_dir&gt;\n';
+                    mapcache += '  &lt;threaded_fetching&gt;true&lt;/threaded_fetching&gt;\n';
+                    mapcache += '  &lt;log_level&gt;debug&lt;/log_level&gt;\n';
+                    mapcache += '  &lt;auto_reload&gt;true&lt/auto_reload&gt; \n';
+                    
+                    
+                    mapcache += '&lt;/mapcache&gt;\n';
+                    
+                    document.getElementById('capabilities').innerHTML = mapcache;
+                }
+            };
+            xhr.send();
+        </script>
+    </body>
+</html>
