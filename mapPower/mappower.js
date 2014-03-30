@@ -41,6 +41,8 @@ getStoreJSon = (function(key){
 //  - urlCapabilities : url of the capabilities
 // --------------------------------------------
 loadCapabilities = (function(urlCapabilities){
+    var xmlDoc;
+    var layers;
     var parser = new ol.parser.ogc.WMSCapabilities(), xmlDoc, layers;
     var xhr = new XMLHttpRequest();
     var mapLayers = {};
@@ -50,10 +52,9 @@ loadCapabilities = (function(urlCapabilities){
     xhr.send(null);
     
     if (xhr.status === 200) {
-        var xmlDoc = parser.read(xhr.responseXML);
+        xmlDoc = parser.read(xhr.responseXML);
         setStore('capabilities', window.JSON.stringify(xmlDoc, undefined, 2));
-        //document.getElementById('capabilities').innerHTML = window.JSON.stringify(xmlDoc, undefined, 2);
-        var layers = xmlDoc.capability.layers;
+        layers = xmlDoc.capability.layers;
         
         // Record each layer
         for (var l = 0; l < layers.length; ++l) {
@@ -409,7 +410,7 @@ buildMapWmts = (function(mapUrl, mapDiv, tileset, time, elevation){
         }),
         extent: EXTENT_
         //style: 'default'
-    })
+    });
     
     dataLayer = new ol.layer.Tile({
         style: 'DataStyle',
