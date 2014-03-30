@@ -6,9 +6,10 @@
 // --------------------------------------------
 // Parameters
 //  - capabilitiesFile : xml capabilities
+//  - urlRequestCapa : WMS getCapabilities request
 //  - projectName : name of the project
 // --------------------------------------------
-buildMapcacheXml = (function(capabilitiesFile, projectName) {
+buildMapcacheXml = (function(capabilitiesFile, urlRequestCapa, projectName) {
     var parser = new ol.parser.ogc.WMSCapabilities(), result;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', capabilitiesFile, false);
@@ -25,7 +26,7 @@ buildMapcacheXml = (function(capabilitiesFile, projectName) {
         var tileset = '';
         var source = '';
         var concat = '&amp;';
-        var idx = url.indexOf('?');
+        var idx = urlRequestCapa.indexOf('?');
         if (idx == -1) {
             concat = '?';
         }
@@ -33,8 +34,8 @@ buildMapcacheXml = (function(capabilitiesFile, projectName) {
         mapcache = '&lt;?xml version="1.0" encoding="UTF-8"?&gt;\n';
         mapcache += '&lt;mapcache&gt;\n';
         mapcache += '  &lt;metadata&gt;\n';
-        mapcache += '    &lt;title&gt;Mapcache service for url: ' + url + '&lt;/title&gt;\n';
-        mapcache += '    &lt;abstract&gt;Render map services for url: ' + url + '&lt;/abstract&gt;\n';
+        mapcache += '    &lt;title&gt;Mapcache service for url: ' + urlRequestCapa + '&lt;/title&gt;\n';
+        mapcache += '    &lt;abstract&gt;Render map services for url: ' + urlRequestCapa + '&lt;/abstract&gt;\n';
         mapcache += '  &lt;/metadata&gt;\n\n';
 
 
@@ -101,7 +102,7 @@ buildMapcacheXml = (function(capabilitiesFile, projectName) {
                 mapcache += '  &lt;!-- Source for layer: ' + layer.name + ', style: ' + style.name + ' --&gt;\n';
                 mapcache += '  &lt;source name="' + source + '" type="wms"&gt;\n';
                 mapcache += '    &lt;http&gt;\n';
-                mapcache += '      &lt;url&gt;' + url + '&lt;/url&gt;\n';
+                mapcache += '      &lt;url&gt;' + urlRequestCapa + '&lt;/url&gt;\n';
                 mapcache += '    &lt;/http&gt;\n';
                 mapcache += '    &lt;getmap&gt;\n';
                 mapcache += '      &lt;params&gt;\n';
@@ -152,7 +153,7 @@ buildMapcacheXml = (function(capabilitiesFile, projectName) {
                 mapcache += '      &lt;param name="LAYERS" type="values"&gt;' + layer.name + '&lt;/param&gt\n';
                 mapcache += '      &lt;param name="STYLES" type="values"&gt;' + style.name + '&lt;/param&gt\n';
                 mapcache += '      &lt;http&gt\n';
-                mapcache += '        &lt;url&gt;' + url + concat + 'LAYERS=' + tileset + '&lt;/url&gt\n';
+                mapcache += '        &lt;url&gt;' + urlRequestCapa + concat + 'LAYERS=' + tileset + '&lt;/url&gt\n';
                 mapcache += '      &lt;/http&gt\n';
                 mapcache += '    &lt;/forwarding_rule&gt\n';
 

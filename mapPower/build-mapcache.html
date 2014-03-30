@@ -219,7 +219,7 @@
             document.getElementById("wmsUrl").value = url;
             
             var xmlCapa = 'WMSCapabilities.xml';       
-            var mapcache = buildMapcacheXml(xmlCapa, 'geometca');
+            var mapcache = buildMapcacheXml(xmlCapa, url, 'geometca');
             
 //            var parser = new ol.parser.ogc.WMSCapabilities(), result;
 //            // TODO read capabilities from cross-origin server
