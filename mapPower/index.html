@@ -4,10 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css">
+
         <link rel="stylesheet" href="layout.css" type="text/css">
-        <link rel="stylesheet" href="ol.css" type="text/css">
+        
+        <!-- JQUERY -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css" type="text/css">
+        <script src="../jquery.min.js"></script>
+        <!-- JQUERY -->
+        
+        <!-- OPENLAYERS3 -->
+        <link rel="stylesheet" href="../ol.css" type="text/css">
         <style>
             .map {
                 height: 400px;
@@ -39,12 +46,22 @@
                 color: #1F2126;
             }
         </style>
-        <script src="ol.js" type="text/javascript">
-        </script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-        </script>
-        <script src="mappower.js">
-        </script>
+        <script src="../ol.js" type="text/javascript"></script>
+        <!-- OPENLAYERS3 -->        
+
+        
+        <!-- CODE-MIRROR -->
+        <link rel="stylesheet" href="../codemirror.css">
+        <link rel="stylesheet" href="../theme/ambiance.css">
+        <script src="../codemirror.js"></script>
+        <style type="text/css">
+          .lineblock { display: inline-block; margin: 1px; height: 5px; }
+          .CodeMirror {border: 1px solid #aaa; height: 800px}
+        </style>
+        <script src="../xml.js"></script>
+        <!-- CODE-MIRROR -->
+        
+        <script src="mappower.js"></script>
         <title>Web Map viewer</title>
     </head>
     <body onload="init();">
@@ -147,7 +164,7 @@
                                     Goodies
                                 </legend>
                                 <p>
-                                    <img src="./mapserver.png" width="5%""/><a href="./build-mapcache.html">build mapcache.xml from capabilities</a>
+                                    <img src="./mapserver.png" width="5%"/><a href="./build-mapcache.html">build mapcache.xml from capabilities</a>
                                 </p>
                             </fieldset>
                         </form>
@@ -156,13 +173,27 @@
                         <div class="span6">
                             <h4 id="title">WMS capabilities</h4>
                             <div id="docs">
-                                <pre id="capabilities"></pre>
+                                <!-- pre id="capabilities"></pre-->
+                                <form>
+                                    <textarea id="capabilities" name="capabilities"></textarea>
+                                </form>
                             </div>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
+        <script>
+              loadCapabilities('WMSCapabilities.xml');
+              document.getElementById('capabilities').innerHTML = getStore('capabilities');
+              var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+              mode: "application/xml",
+              lineNumbers: true,
+              //lineWrapping: true
+              //theme: 'ambiance'
+            });
+            
+        </script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.js" type="text/javascript">
         </script>
         <script src="http://spatialreference.org/ref/epsg/4326/proj4js/" type="text/javascript">

@@ -24,6 +24,17 @@ getStore = (function(key){
 });
 
 // --------------------------------------------
+// JSonify a stored JSON object
+// --------------------------------------------
+// Parameters
+//  - key : key
+// --------------------------------------------
+getStoreJSon = (function(key){
+    var jsonObj = getStore(key);
+    return window.JSON.stringify(jsonObj, undefined, 2);
+});
+
+// --------------------------------------------
 // Read capabilities (Synchronous request)
 // --------------------------------------------
 // Parameters
@@ -40,7 +51,8 @@ loadCapabilities = (function(urlCapabilities){
     
     if (xhr.status === 200) {
         var xmlDoc = parser.read(xhr.responseXML);
-        document.getElementById('capabilities').innerHTML = window.JSON.stringify(xmlDoc, undefined, 2);
+        setStore('capabilities', window.JSON.stringify(xmlDoc, undefined, 2));
+        //document.getElementById('capabilities').innerHTML = window.JSON.stringify(xmlDoc, undefined, 2);
         var layers = xmlDoc.capability.layers;
         
         // Record each layer
