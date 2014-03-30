@@ -399,7 +399,9 @@
 //                    
 //                    
 //                    mapcache += '&lt;/mapcache&gt;\n';
-                    
+//                }
+//            };
+//            xhr.send();
                     document.getElementById('capabilities').innerHTML = mapcache;
                     var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
                       mode: "application/xml",
@@ -407,9 +409,6 @@
                       //lineWrapping: true
                       //theme: 'ambiance'
                     });
-                }
-            };
-            xhr.send();
         </script>
     </body>
 </html>

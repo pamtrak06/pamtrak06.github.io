@@ -184,4 +184,3 @@ buildMapcacheXml = (function(capabilitiesFile) {
     };
     xhr.send();
 });
-`
