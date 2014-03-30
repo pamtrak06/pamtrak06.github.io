@@ -10,6 +10,7 @@
         <!-- JQUERY -->
         <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../css/bootstrap-responsive.min.css" type="text/css">
+        <script src="../jquery.min.js"></script>
         <!-- JQUERY -->
         
         <!-- OPENLAYERS3 -->
@@ -215,18 +216,19 @@
             </div>
         </div>
         <script type="text/javascript">
-            
-            var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
-            document.getElementById("wmsUrl").value = url;
-                   
-            var mapcache = buildMapcacheXml('WMSCapabilities.xml', url, 'geometca');
-            
-            document.getElementById('capabilities').innerHTML = mapcache;
-            var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
-              mode: "application/xml",
-              lineNumbers: true,
-              //lineWrapping: true
-              //theme: 'ambiance'
+          var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+          document.getElementById("wmsUrl").value = url;
+          $.getJSON('http://whateverorigin.org/get?url=' + 
+            encodeURIComponent(url) + '&callback=?',
+            function(data) {
+                //$("#capabilities").html(data.contents);
+                //document.getElementById('capabilities').innerHTML = data.contents;
+                var mapcache = buildMapcacheXmlFromContent(data.contents, url, 'geometca');
+                document.getElementById('capabilities').innerHTML = mapcache;
+                var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+                  mode: "application/xml",
+                  lineNumbers: true,
+                });
             });
         </script>
     </body>

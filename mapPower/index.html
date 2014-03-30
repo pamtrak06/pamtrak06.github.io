@@ -195,19 +195,13 @@
           $.getJSON('http://whateverorigin.org/get?url=' + 
             encodeURIComponent(url) + '&callback=?',
             function(data) {
-                $("#code").html(data.contents);
-                console.log(data.contents);
-                setStore('capabilities', data.contents);
+                $("#capabilities").html(data.contents);
                 //document.getElementById('capabilities').innerHTML = data.contents;
+                var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+                  mode: "application/xml",
+                  lineNumbers: true,
+                });
             });
-          //loadCapabilities('WMSCapabilities.xml');
-          document.getElementById('capabilities').innerHTML = getStore('capabilities');
-          var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
-              mode: "application/xml",
-              lineNumbers: true,
-              //lineWrapping: true
-              //theme: 'ambiance'
-          });
         </script>
         <script src="../proj4js-compressed.js" type="text/javascript">
         </script>
