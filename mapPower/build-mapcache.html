@@ -396,10 +396,11 @@
                     
                     document.getElementById('capabilities').innerHTML = mapcache;
                     var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+                      mode: "application/xml",
                       lineNumbers: true,
-                      lineWrapping: true
+                      lineWrapping: true,
+                      theme: 'ambiance'
                     });
-                    editor.setOption("theme", 'ambiance');
                 }
             };
             xhr.send();
