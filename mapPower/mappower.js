@@ -27,7 +27,7 @@ getStore = (function(key){
 // Read capabilities (Synchronous request)
 // --------------------------------------------
 // Parameters
-//  - urlCapabilities : url of the apabilities
+//  - urlCapabilities : url of the capabilities
 // --------------------------------------------
 loadCapabilities = (function(urlCapabilities){
     var parser = new ol.parser.ogc.WMSCapabilities(), xmlDoc, layers;
