@@ -499,7 +499,7 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     dataLayer = new ol.layer.Image({
         source: new ol.source.ImageWMS({
             url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
-            crossOrigin: 'null',
+            crossOrigin: null,
             attributions: [new ol.Attribution({
                 html: '&copy; ' +
                 '<a href="http://dd.meteo.gc.ca/doc/LICENCE_GENERAL.txt' +
