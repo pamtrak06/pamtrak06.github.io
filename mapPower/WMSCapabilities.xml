@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="iso-8859-1" standalone="no" ?>
 <!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
-<WMT_MS_Capabilities version="1.1.1" updateSequence="2014-03-14T18:44:46Z">
+<WMT_MS_Capabilities version="1.1.1" updateSequence="2014-03-30T15:55:59Z">
     <Service>
         <Name>OGC:WMS</Name>
         <Title>Meteorological Service of Environment Canada OWS Data Server - WMS</Title>
@@ -144,12 +144,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90"/>
                     <BoundingBox SRS="EPSG:4326" minx="-180" miny="-90" maxx="180" maxy="90" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                    <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>GDPS.ETA_GZ</Name>
                         <Title>GDPS.ETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -168,7 +168,7 @@
                         <Name>GDPS.ETA_UU</Name>
                         <Title>GDPS.ETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -211,7 +211,7 @@
                         <Name>GDPS.ETA_NT</Name>
                         <Title>GDPS.ETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -230,7 +230,7 @@
                         <Name>GDPS.ETA_TT</Name>
                         <Title>GDPS.ETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -265,7 +265,7 @@
                         <Name>GDPS.ETA_TD</Name>
                         <Title>GDPS.ETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -284,7 +284,7 @@
                         <Name>GDPS.ETA_HU</Name>
                         <Title>GDPS.ETA - Specific humidity (KG/KG)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -303,7 +303,7 @@
                         <Name>GDPS.ETA_ES</Name>
                         <Title>GDPS.ETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -322,7 +322,7 @@
                         <Name>GDPS.ETA_HR</Name>
                         <Title>GDPS.ETA - Relative humidity (NIL)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -341,7 +341,7 @@
                         <Name>GDPS.ETA_P0</Name>
                         <Title>GDPS.ETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -360,7 +360,7 @@
                         <Name>GDPS.ETA_PN</Name>
                         <Title>GDPS.ETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -395,7 +395,7 @@
                         <Name>GDPS.ETA_PR</Name>
                         <Title>GDPS.ETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -422,7 +422,7 @@
                         <Name>GDPS.ETA_RT</Name>
                         <Title>GDPS.ETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -441,7 +441,7 @@
                         <Name>GDPS.ETA_RN</Name>
                         <Title>GDPS.ETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -460,7 +460,7 @@
                         <Name>GDPS.ETA_FR</Name>
                         <Title>GDPS.ETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -479,7 +479,7 @@
                         <Name>GDPS.ETA_SN</Name>
                         <Title>GDPS.ETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -498,7 +498,7 @@
                         <Name>GDPS.ETA_I0</Name>
                         <Title>GDPS.ETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -517,7 +517,7 @@
                         <Name>GDPS.ETA_I1</Name>
                         <Title>GDPS.ETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -536,7 +536,7 @@
                         <Name>GDPS.ETA_I2</Name>
                         <Title>GDPS.ETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -555,7 +555,7 @@
                         <Name>GDPS.ETA_I3</Name>
                         <Title>GDPS.ETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -574,7 +574,7 @@
                         <Name>GDPS.ETA_I4</Name>
                         <Title>GDPS.ETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -593,7 +593,7 @@
                         <Name>GDPS.ETA_I5</Name>
                         <Title>GDPS.ETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -612,7 +612,7 @@
                         <Name>GDPS.ETA_I8</Name>
                         <Title>GDPS.ETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -634,12 +634,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90"/>
                     <BoundingBox SRS="EPSG:4326" minx="-180" miny="-90" maxx="180" maxy="90" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                    <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>GDPS.PRES_UU</Name>
                         <Title>GDPS.PRES - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -682,7 +682,7 @@
                         <Name>GDPS.PRES_TT</Name>
                         <Title>GDPS.PRES - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -717,7 +717,7 @@
                         <Name>GDPS.PRES_HU</Name>
                         <Title>GDPS.PRES - Specific humidity (KG/KG)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -736,7 +736,7 @@
                         <Name>GDPS.PRES_HR</Name>
                         <Title>GDPS.PRES - Relative humidity (NIL)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -755,7 +755,7 @@
                         <Name>GDPS.PRES_GZ</Name>
                         <Title>GDPS.PRES - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -774,7 +774,7 @@
                         <Name>GDPS.PRES_ES</Name>
                         <Title>GDPS.PRES - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-20T12:00:00Z">2014-03-14T12:00:00Z/2014-03-20T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-05T00:00:00Z">2014-03-30T00:00:00Z/2014-04-05T00:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -801,12 +801,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-85.106" miny="58.252" maxx="-55.179" maxy="70.236"/>
                     <BoundingBox SRS="EPSG:4326" minx="-85.106" miny="58.252" maxx="-55.179" maxy="70.236" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>HRDPS.ARCTICETA_GZ</Name>
                         <Title>HRDPS.ARCTICETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -825,7 +825,7 @@
                         <Name>HRDPS.ARCTICETA_UU</Name>
                         <Title>HRDPS.ARCTICETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -868,7 +868,7 @@
                         <Name>HRDPS.ARCTICETA_NT</Name>
                         <Title>HRDPS.ARCTICETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -887,7 +887,7 @@
                         <Name>HRDPS.ARCTICETA_TT</Name>
                         <Title>HRDPS.ARCTICETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -922,7 +922,7 @@
                         <Name>HRDPS.ARCTICETA_TD</Name>
                         <Title>HRDPS.ARCTICETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -941,7 +941,7 @@
                         <Name>HRDPS.ARCTICETA_ES</Name>
                         <Title>HRDPS.ARCTICETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -960,7 +960,7 @@
                         <Name>HRDPS.ARCTICETA_P0</Name>
                         <Title>HRDPS.ARCTICETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -979,7 +979,7 @@
                         <Name>HRDPS.ARCTICETA_PN</Name>
                         <Title>HRDPS.ARCTICETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1014,7 +1014,7 @@
                         <Name>HRDPS.ARCTICETA_PR</Name>
                         <Title>HRDPS.ARCTICETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1041,7 +1041,7 @@
                         <Name>HRDPS.ARCTICETA_RT</Name>
                         <Title>HRDPS.ARCTICETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1060,7 +1060,7 @@
                         <Name>HRDPS.ARCTICETA_RN</Name>
                         <Title>HRDPS.ARCTICETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1079,7 +1079,7 @@
                         <Name>HRDPS.ARCTICETA_FR</Name>
                         <Title>HRDPS.ARCTICETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1098,7 +1098,7 @@
                         <Name>HRDPS.ARCTICETA_SN</Name>
                         <Title>HRDPS.ARCTICETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1117,7 +1117,7 @@
                         <Name>HRDPS.ARCTICETA_I0</Name>
                         <Title>HRDPS.ARCTICETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1136,7 +1136,7 @@
                         <Name>HRDPS.ARCTICETA_I1</Name>
                         <Title>HRDPS.ARCTICETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1155,7 +1155,7 @@
                         <Name>HRDPS.ARCTICETA_I2</Name>
                         <Title>HRDPS.ARCTICETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1174,7 +1174,7 @@
                         <Name>HRDPS.ARCTICETA_I3</Name>
                         <Title>HRDPS.ARCTICETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1193,7 +1193,7 @@
                         <Name>HRDPS.ARCTICETA_I4</Name>
                         <Title>HRDPS.ARCTICETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1212,7 +1212,7 @@
                         <Name>HRDPS.ARCTICETA_I5</Name>
                         <Title>HRDPS.ARCTICETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1231,7 +1231,7 @@
                         <Name>HRDPS.ARCTICETA_I8</Name>
                         <Title>HRDPS.ARCTICETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1253,12 +1253,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-95.476" miny="37.990" maxx="-68.764" maxy="51.323"/>
                     <BoundingBox SRS="EPSG:4326" minx="-95.476" miny="37.990" maxx="-68.764" maxy="51.323" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>HRDPS.EASTETA_GZ</Name>
                         <Title>HRDPS.EASTETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1277,7 +1277,7 @@
                         <Name>HRDPS.EASTETA_UU</Name>
                         <Title>HRDPS.EASTETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1320,7 +1320,7 @@
                         <Name>HRDPS.EASTETA_NT</Name>
                         <Title>HRDPS.EASTETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1339,7 +1339,7 @@
                         <Name>HRDPS.EASTETA_TT</Name>
                         <Title>HRDPS.EASTETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1374,7 +1374,7 @@
                         <Name>HRDPS.EASTETA_TD</Name>
                         <Title>HRDPS.EASTETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1393,7 +1393,7 @@
                         <Name>HRDPS.EASTETA_ES</Name>
                         <Title>HRDPS.EASTETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1412,7 +1412,7 @@
                         <Name>HRDPS.EASTETA_P0</Name>
                         <Title>HRDPS.EASTETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1431,7 +1431,7 @@
                         <Name>HRDPS.EASTETA_PN</Name>
                         <Title>HRDPS.EASTETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1466,7 +1466,7 @@
                         <Name>HRDPS.EASTETA_PR</Name>
                         <Title>HRDPS.EASTETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1493,7 +1493,7 @@
                         <Name>HRDPS.EASTETA_RT</Name>
                         <Title>HRDPS.EASTETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1512,7 +1512,7 @@
                         <Name>HRDPS.EASTETA_RN</Name>
                         <Title>HRDPS.EASTETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1531,7 +1531,7 @@
                         <Name>HRDPS.EASTETA_FR</Name>
                         <Title>HRDPS.EASTETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1550,7 +1550,7 @@
                         <Name>HRDPS.EASTETA_SN</Name>
                         <Title>HRDPS.EASTETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1569,7 +1569,7 @@
                         <Name>HRDPS.EASTETA_I0</Name>
                         <Title>HRDPS.EASTETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1588,7 +1588,7 @@
                         <Name>HRDPS.EASTETA_I1</Name>
                         <Title>HRDPS.EASTETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1607,7 +1607,7 @@
                         <Name>HRDPS.EASTETA_I2</Name>
                         <Title>HRDPS.EASTETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1626,7 +1626,7 @@
                         <Name>HRDPS.EASTETA_I3</Name>
                         <Title>HRDPS.EASTETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1645,7 +1645,7 @@
                         <Name>HRDPS.EASTETA_I4</Name>
                         <Title>HRDPS.EASTETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1664,7 +1664,7 @@
                         <Name>HRDPS.EASTETA_I5</Name>
                         <Title>HRDPS.EASTETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1683,7 +1683,7 @@
                         <Name>HRDPS.EASTETA_I8</Name>
                         <Title>HRDPS.EASTETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T12:00:00Z">2014-03-14T12:00:00Z/2014-03-15T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T12:00:00Z">2014-03-30T12:00:00Z/2014-03-31T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1705,12 +1705,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-73.506" miny="40.210" maxx="-40.824" maxy="54.596"/>
                     <BoundingBox SRS="EPSG:4326" minx="-73.506" miny="40.210" maxx="-40.824" maxy="54.596" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>HRDPS.MARITIMEETA_GZ</Name>
                         <Title>HRDPS.MARITIMEETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1729,7 +1729,7 @@
                         <Name>HRDPS.MARITIMEETA_UU</Name>
                         <Title>HRDPS.MARITIMEETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1772,7 +1772,7 @@
                         <Name>HRDPS.MARITIMEETA_NT</Name>
                         <Title>HRDPS.MARITIMEETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1791,7 +1791,7 @@
                         <Name>HRDPS.MARITIMEETA_TT</Name>
                         <Title>HRDPS.MARITIMEETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1826,7 +1826,7 @@
                         <Name>HRDPS.MARITIMEETA_TD</Name>
                         <Title>HRDPS.MARITIMEETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1845,7 +1845,7 @@
                         <Name>HRDPS.MARITIMEETA_ES</Name>
                         <Title>HRDPS.MARITIMEETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1864,7 +1864,7 @@
                         <Name>HRDPS.MARITIMEETA_P0</Name>
                         <Title>HRDPS.MARITIMEETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1883,7 +1883,7 @@
                         <Name>HRDPS.MARITIMEETA_PN</Name>
                         <Title>HRDPS.MARITIMEETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1918,7 +1918,7 @@
                         <Name>HRDPS.MARITIMEETA_PR</Name>
                         <Title>HRDPS.MARITIMEETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1945,7 +1945,7 @@
                         <Name>HRDPS.MARITIMEETA_RT</Name>
                         <Title>HRDPS.MARITIMEETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1964,7 +1964,7 @@
                         <Name>HRDPS.MARITIMEETA_RN</Name>
                         <Title>HRDPS.MARITIMEETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -1983,7 +1983,7 @@
                         <Name>HRDPS.MARITIMEETA_FR</Name>
                         <Title>HRDPS.MARITIMEETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2002,7 +2002,7 @@
                         <Name>HRDPS.MARITIMEETA_SN</Name>
                         <Title>HRDPS.MARITIMEETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2021,7 +2021,7 @@
                         <Name>HRDPS.MARITIMEETA_I0</Name>
                         <Title>HRDPS.MARITIMEETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2040,7 +2040,7 @@
                         <Name>HRDPS.MARITIMEETA_I1</Name>
                         <Title>HRDPS.MARITIMEETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2059,7 +2059,7 @@
                         <Name>HRDPS.MARITIMEETA_I2</Name>
                         <Title>HRDPS.MARITIMEETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2078,7 +2078,7 @@
                         <Name>HRDPS.MARITIMEETA_I3</Name>
                         <Title>HRDPS.MARITIMEETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2097,7 +2097,7 @@
                         <Name>HRDPS.MARITIMEETA_I4</Name>
                         <Title>HRDPS.MARITIMEETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2116,7 +2116,7 @@
                         <Name>HRDPS.MARITIMEETA_I5</Name>
                         <Title>HRDPS.MARITIMEETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2135,7 +2135,7 @@
                         <Name>HRDPS.MARITIMEETA_I8</Name>
                         <Title>HRDPS.MARITIMEETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T06:00:00Z">2014-03-14T06:00:00Z/2014-03-15T06:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2157,12 +2157,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-136.010" miny="44.167" maxx="-108.855" maxy="57.208"/>
                     <BoundingBox SRS="EPSG:4326" minx="-136.010" miny="44.167" maxx="-108.855" maxy="57.208" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>HRDPS.WESTETA_GZ</Name>
                         <Title>HRDPS.WESTETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2181,7 +2181,7 @@
                         <Name>HRDPS.WESTETA_UU</Name>
                         <Title>HRDPS.WESTETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2224,7 +2224,7 @@
                         <Name>HRDPS.WESTETA_NT</Name>
                         <Title>HRDPS.WESTETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2243,7 +2243,7 @@
                         <Name>HRDPS.WESTETA_TT</Name>
                         <Title>HRDPS.WESTETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2278,7 +2278,7 @@
                         <Name>HRDPS.WESTETA_TD</Name>
                         <Title>HRDPS.WESTETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2297,7 +2297,7 @@
                         <Name>HRDPS.WESTETA_ES</Name>
                         <Title>HRDPS.WESTETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2316,7 +2316,7 @@
                         <Name>HRDPS.WESTETA_P0</Name>
                         <Title>HRDPS.WESTETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2335,7 +2335,7 @@
                         <Name>HRDPS.WESTETA_PN</Name>
                         <Title>HRDPS.WESTETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2370,7 +2370,7 @@
                         <Name>HRDPS.WESTETA_PR</Name>
                         <Title>HRDPS.WESTETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2397,7 +2397,7 @@
                         <Name>HRDPS.WESTETA_RT</Name>
                         <Title>HRDPS.WESTETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2416,7 +2416,7 @@
                         <Name>HRDPS.WESTETA_RN</Name>
                         <Title>HRDPS.WESTETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2435,7 +2435,7 @@
                         <Name>HRDPS.WESTETA_FR</Name>
                         <Title>HRDPS.WESTETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2454,7 +2454,7 @@
                         <Name>HRDPS.WESTETA_SN</Name>
                         <Title>HRDPS.WESTETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2473,7 +2473,7 @@
                         <Name>HRDPS.WESTETA_I0</Name>
                         <Title>HRDPS.WESTETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2492,7 +2492,7 @@
                         <Name>HRDPS.WESTETA_I1</Name>
                         <Title>HRDPS.WESTETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2511,7 +2511,7 @@
                         <Name>HRDPS.WESTETA_I2</Name>
                         <Title>HRDPS.WESTETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2530,7 +2530,7 @@
                         <Name>HRDPS.WESTETA_I3</Name>
                         <Title>HRDPS.WESTETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2549,7 +2549,7 @@
                         <Name>HRDPS.WESTETA_I4</Name>
                         <Title>HRDPS.WESTETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2568,7 +2568,7 @@
                         <Name>HRDPS.WESTETA_I5</Name>
                         <Title>HRDPS.WESTETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2587,7 +2587,7 @@
                         <Name>HRDPS.WESTETA_I8</Name>
                         <Title>HRDPS.WESTETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-15T18:00:00Z">2014-03-14T18:00:00Z/2014-03-15T18:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-03-31T06:00:00Z">2014-03-30T06:00:00Z/2014-03-31T06:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2610,12 +2610,12 @@
                 <SRS>EPSG:4326</SRS>
                 <LatLonBoundingBox minx="-150" miny="-50" maxx="20" maxy="90"/>
                 <BoundingBox SRS="EPSG:4326" minx="-150" miny="-50" maxx="20" maxy="90" resx="0.0001" resy="0.0001"/>
-                <Extent name="time" default="2014-03-14T18:30:00Z">2014-03-14T15:00:00Z/2014-03-14T18:30:00Z/PT10M</Extent>
+                <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
                 <Layer queryable="1" opaque="0">
                     <Name>RADAR_RDBR</Name>
                     <Title>RADAR - Rain mode reflectivity (dbz)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-14T18:30:00Z">2014-03-14T15:00:00Z/2014-03-14T18:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2650,7 +2650,7 @@
                     <Name>RADAR_RDBS</Name>
                     <Title>RADAR - Snow mode reflectivity (mm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-14T18:30:00Z">2014-03-14T15:00:00Z/2014-03-14T18:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2685,7 +2685,7 @@
                     <Name>RADAR_RRAI</Name>
                     <Title>RADAR - Rain precipitation (mm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-14T18:30:00Z">2014-03-14T15:00:00Z/2014-03-14T18:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2712,7 +2712,7 @@
                     <Name>RADAR_RSNO</Name>
                     <Title>RADAR - Snow precipitation (cm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-14T18:30:00Z">2014-03-14T15:00:00Z/2014-03-14T18:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2742,12 +2742,12 @@
                 <SRS>EPSG:4326</SRS>
                 <LatLonBoundingBox minx="-173.004" miny="19.011" maxx="-38.045" maxy="76.115"/>
                 <BoundingBox SRS="EPSG:4326" minx="-173.004" miny="19.011" maxx="-38.045" maxy="76.115" resx="0.001" resy="0.001"/>
-                <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                 <Layer queryable="1" opaque="0">
                     <Name>RAQDPS_O3</Name>
                     <Title>RAQDPS - Total Ozone (dobson)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2766,7 +2766,7 @@
                     <Name>RAQDPS_AF</Name>
                     <Title>RAQDPS - Concentration of fine particulate (Diam. &lt; 2.5 Microns) (micrograms/M3)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2785,7 +2785,7 @@
                     <Name>RAQDPS_AC</Name>
                     <Title>RAQDPS - Particulate concentration ( Diam &lt; 10 Microns) (micrograms/M3)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2804,7 +2804,7 @@
                     <Name>RAQDPS_S2</Name>
                     <Title>RAQDPS - Sulphur Dioxide Gas (SO2) (ppb)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2823,7 +2823,7 @@
                     <Name>RAQDPS_NO</Name>
                     <Title>RAQDPS - Nitric Oxide Gas (NO) (ppb)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2842,7 +2842,7 @@
                     <Name>RAQDPS_N2</Name>
                     <Title>RAQDPS - Nitrogen dioxide gas (NO2) (ppb)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Extent name="elevation" default="-1">-1,93423264</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2882,12 +2882,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-179" miny="28" maxx="-39" maxy="80"/>
                     <BoundingBox SRS="EPSG:4326" minx="-179" miny="28" maxx="-39" maxy="80" resx="0.01" resy="0.01"/>
-                    <Extent name="time" default="2014-03-13T12:00:00Z">2014-03-11T12:00:00Z/2014-03-13T12:00:00Z/PT24H</Extent>
+                    <Extent name="time" default="2014-03-29T12:00:00Z">2014-03-27T12:00:00Z/2014-03-29T12:00:00Z/PT24H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>RDPA.24F_PR</Name>
                         <Title>RDPA.24F - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-13T12:00:00Z">2014-03-11T12:00:00Z/2014-03-13T12:00:00Z/PT24H</Extent>
+                        <Extent name="time" default="2014-03-29T12:00:00Z">2014-03-27T12:00:00Z/2014-03-29T12:00:00Z/PT24H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2922,12 +2922,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-180" miny="6" maxx="180" maxy="90"/>
                     <BoundingBox SRS="EPSG:4326" minx="-180" miny="6" maxx="180" maxy="90" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>RDPS.ETA_GZ</Name>
                         <Title>RDPS.ETA - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2946,7 +2946,7 @@
                         <Name>RDPS.ETA_UU</Name>
                         <Title>RDPS.ETA - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -2989,7 +2989,7 @@
                         <Name>RDPS.ETA_NT</Name>
                         <Title>RDPS.ETA - Total Cloud Cover (nil)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3008,7 +3008,7 @@
                         <Name>RDPS.ETA_TT</Name>
                         <Title>RDPS.ETA - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3043,7 +3043,7 @@
                         <Name>RDPS.ETA_TD</Name>
                         <Title>RDPS.ETA - Dew Point Temperature (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3062,7 +3062,7 @@
                         <Name>RDPS.ETA_HU</Name>
                         <Title>RDPS.ETA - Specific humidity (KG/KG)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3081,7 +3081,7 @@
                         <Name>RDPS.ETA_ES</Name>
                         <Title>RDPS.ETA - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3100,7 +3100,7 @@
                         <Name>RDPS.ETA_HR</Name>
                         <Title>RDPS.ETA - Relative humidity (NIL)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,12000</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3119,7 +3119,7 @@
                         <Name>RDPS.ETA_P0</Name>
                         <Title>RDPS.ETA - Surface Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3138,7 +3138,7 @@
                         <Name>RDPS.ETA_PN</Name>
                         <Title>RDPS.ETA - Sea Level Pressure (mb)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3173,7 +3173,7 @@
                         <Name>RDPS.ETA_PR</Name>
                         <Title>RDPS.ETA - Quantity of Precipitation (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3200,7 +3200,7 @@
                         <Name>RDPS.ETA_RT</Name>
                         <Title>RDPS.ETA - Total Precipitation Rate (m/s)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3219,7 +3219,7 @@
                         <Name>RDPS.ETA_RN</Name>
                         <Title>RDPS.ETA - Rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3238,7 +3238,7 @@
                         <Name>RDPS.ETA_FR</Name>
                         <Title>RDPS.ETA - Freezing rain (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3257,7 +3257,7 @@
                         <Name>RDPS.ETA_SN</Name>
                         <Title>RDPS.ETA - Snow (QPF) (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3276,7 +3276,7 @@
                         <Name>RDPS.ETA_I0</Name>
                         <Title>RDPS.ETA - Surface and soil temperatures (K)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3295,7 +3295,7 @@
                         <Name>RDPS.ETA_I1</Name>
                         <Title>RDPS.ETA - Soil volumetric water contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,1199</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3314,7 +3314,7 @@
                         <Name>RDPS.ETA_I2</Name>
                         <Title>RDPS.ETA - Soil volumetric ice contents (M3/M3)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3333,7 +3333,7 @@
                         <Name>RDPS.ETA_I3</Name>
                         <Title>RDPS.ETA - Water retained on the vegetation (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3352,7 +3352,7 @@
                         <Name>RDPS.ETA_I4</Name>
                         <Title>RDPS.ETA - Water in the snow pack (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3371,7 +3371,7 @@
                         <Name>RDPS.ETA_I5</Name>
                         <Title>RDPS.ETA - Snow mass (KG/M2)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3390,7 +3390,7 @@
                         <Name>RDPS.ETA_I8</Name>
                         <Title>RDPS.ETA - Sea ice thickness (m)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT1H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT1H</Extent>
                         <Extent name="elevation" default="-1">-1,0</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3412,12 +3412,12 @@
                     <SRS>EPSG:4326</SRS>
                     <LatLonBoundingBox minx="-180" miny="6" maxx="180" maxy="90"/>
                     <BoundingBox SRS="EPSG:4326" minx="-180" miny="6" maxx="180" maxy="90" resx="0.001" resy="0.001"/>
-                    <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                    <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                     <Layer queryable="1" opaque="0">
                         <Name>RDPS.PRES_UU</Name>
                         <Title>RDPS.PRES - Winds (noeuds)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3460,7 +3460,7 @@
                         <Name>RDPS.PRES_TT</Name>
                         <Title>RDPS.PRES - Air Temperature (c)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3495,7 +3495,7 @@
                         <Name>RDPS.PRES_HU</Name>
                         <Title>RDPS.PRES - Specific humidity (KG/KG)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3514,7 +3514,7 @@
                         <Name>RDPS.PRES_HR</Name>
                         <Title>RDPS.PRES - Relative humidity (NIL)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3533,7 +3533,7 @@
                         <Name>RDPS.PRES_GZ</Name>
                         <Title>RDPS.PRES - Geopotential height (DAM)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
@@ -3552,7 +3552,7 @@
                         <Name>RDPS.PRES_ES</Name>
                         <Title>RDPS.PRES - Dew point depression (C)</Title>
                         <Abstract/>
-                        <Extent name="time" default="2014-03-16T12:00:00Z">2014-03-14T12:00:00Z/2014-03-16T12:00:00Z/PT3H</Extent>
+                        <Extent name="time" default="2014-04-01T12:00:00Z">2014-03-30T12:00:00Z/2014-04-01T12:00:00Z/PT3H</Extent>
                         <Extent name="elevation" default="-1">-1,1000,925,850,700,500</Extent>
                         <MetadataURL type="TC211">
                             <Format>text/xml</Format>
