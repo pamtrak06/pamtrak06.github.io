@@ -4,9 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+        
+        <!-- JQUERY -->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="layout.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css">
+        <!-- JQUERY -->
+        
+        <!-- OPENLAYERS3 -->
         <link rel="stylesheet" href="ol.css" type="text/css">
         <style>
             .map {
@@ -16,6 +21,18 @@
         </style>
         <script src="ol.js" type="text/javascript">
         </script>
+        <!-- OPENLAYERS3 -->
+        
+        <!-- CODE-MIRROR -->
+        <link rel="stylesheet" href="codemirror.css">
+        <link rel="stylesheet" href="theme/ambiance.css">
+        <script src="codemirror.js"></script>
+        <style type="text/css">
+          .lineblock { display: inline-block; margin: 1px; height: 5px; }
+          .CodeMirror {border: 1px solid #aaa; height: 400px}
+        </style>
+        <!-- CODE-MIRROR -->
+        
         <title>Mapcache configuration builder</title>
     </head>
     <body>
@@ -185,7 +202,10 @@
                 </table>
                 <tr>
                     <td>
-                        <pre id="capabilities"></pre>
+                        <!--pre id="capabilities"></pre-->
+                        <form>
+                            <textarea id="capabilities" name="capabilities"></textarea>
+                        </form>
                     </td>
                 </tr>
             </div>
@@ -375,6 +395,11 @@
                     mapcache += '&lt;/mapcache&gt;\n';
                     
                     document.getElementById('capabilities').innerHTML = mapcache;
+                    var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+                      lineNumbers: true,
+                      lineWrapping: true
+                    });
+                    editor.setOption("theme", 'ambiance');
                 }
             };
             xhr.send();
