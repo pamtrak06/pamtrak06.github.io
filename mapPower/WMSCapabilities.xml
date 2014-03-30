@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="iso-8859-1" standalone="no" ?>
 <!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
-<WMT_MS_Capabilities version="1.1.1" updateSequence="2014-03-30T15:55:59Z">
+<WMT_MS_Capabilities version="1.1.1" updateSequence="2014-03-30T16:25:59Z">
     <Service>
         <Name>OGC:WMS</Name>
         <Title>Meteorological Service of Environment Canada OWS Data Server - WMS</Title>
@@ -2610,12 +2610,12 @@
                 <SRS>EPSG:4326</SRS>
                 <LatLonBoundingBox minx="-150" miny="-50" maxx="20" maxy="90"/>
                 <BoundingBox SRS="EPSG:4326" minx="-150" miny="-50" maxx="20" maxy="90" resx="0.0001" resy="0.0001"/>
-                <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
+                <Extent name="time" default="2014-03-30T16:10:00Z">2014-03-30T09:00:00Z/2014-03-30T16:10:00Z/PT10M</Extent>
                 <Layer queryable="1" opaque="0">
                     <Name>RADAR_RDBR</Name>
                     <Title>RADAR - Rain mode reflectivity (dbz)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T16:10:00Z">2014-03-30T09:00:00Z/2014-03-30T16:10:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2650,7 +2650,7 @@
                     <Name>RADAR_RDBS</Name>
                     <Title>RADAR - Snow mode reflectivity (mm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T16:10:00Z">2014-03-30T09:00:00Z/2014-03-30T16:10:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2685,7 +2685,7 @@
                     <Name>RADAR_RRAI</Name>
                     <Title>RADAR - Rain precipitation (mm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T16:10:00Z">2014-03-30T09:00:00Z/2014-03-30T16:10:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
@@ -2712,7 +2712,7 @@
                     <Name>RADAR_RSNO</Name>
                     <Title>RADAR - Snow precipitation (cm/hr)</Title>
                     <Abstract/>
-                    <Extent name="time" default="2014-03-30T15:30:00Z">2014-03-30T09:00:00Z/2014-03-30T15:30:00Z/PT10M</Extent>
+                    <Extent name="time" default="2014-03-30T16:10:00Z">2014-03-30T09:00:00Z/2014-03-30T16:10:00Z/PT10M</Extent>
                     <Extent name="elevation" default="-1">-1,-1</Extent>
                     <MetadataURL type="TC211">
                         <Format>text/xml</Format>
