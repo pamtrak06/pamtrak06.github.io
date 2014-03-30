@@ -549,7 +549,7 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     extent = new ol.control.ZoomToExtent();
     mapWms.addControl(zoomslider);
     mapWms.addControl(fullScreen);
-    //mapWms.addControl(extent);
+    mapWms.addControl(extent);
     
     
     return mapWms;
