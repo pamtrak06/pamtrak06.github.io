@@ -31,6 +31,7 @@
           .lineblock { display: inline-block; margin: 1px; height: 5px; }
           .CodeMirror {border: 1px solid #aaa; height: 800px}
         </style>
+        <script src="xml.js"></script>
         <!-- CODE-MIRROR -->
         
         <title>Mapcache configuration builder</title>
@@ -398,8 +399,8 @@
                     var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
                       mode: "application/xml",
                       lineNumbers: true,
-                      lineWrapping: true,
-                      theme: 'ambiance'
+                      //lineWrapping: true
+                      //theme: 'ambiance'
                     });
                 }
             };
