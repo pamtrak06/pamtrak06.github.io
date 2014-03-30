@@ -195,11 +195,11 @@
           $.getJSON('http://whateverorigin.org/get?url=' + 
             encodeURIComponent(url) + '&callback=?',
             function(data) {
-                $("#capabilities").html(data.contents);
-                //document.getElementById('capabilities').innerHTML = data.contents;
+                //$("#capabilities").html(data.contents);
+                document.getElementById('capabilities').innerHTML = data.contents;
                 var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
                   mode: "application/xml",
-                  lineNumbers: true,
+                  lineNumbers: true
                 });
             });
         </script>
