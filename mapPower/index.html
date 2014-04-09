@@ -28,7 +28,7 @@
             }
             
             div.submit input {
-                color: #0b4df4;
+                color: #b71414;
                 text-decoration: none;
             }
             
@@ -171,11 +171,8 @@
                                     Goodies
                                 </legend>
                                 <p>
-                                    <img src="./mapserver.png" width="8%"/><a href="./build-mapcache.html">Mapcache: build mapcache.xml from capabilities</a>
+                                    <img src="./mapserver.png" width="5%"/><a href="./build-mapcache.html">build mapcache.xml from capabilities</a>
                                 </p>
-                                <p><img src="jsfiddle-logo.png" width="8%"/><a href="http://jsfiddle.net/pamtrak/x5kaz/9/">Jsfiddle openlayers3 example</a></p>
-                                <p><img src="codemirror-logo.png" width="12%"/><a href="http://jsfiddle.net/pamtrak/5WDnd/7/">Codemirror capabilities example</a></p>
-                                
                             </fieldset>
                         </form>
                     </td>
@@ -193,6 +190,19 @@
                 </tr>
             </table>
         </div>
+        <script>
+          var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+          $.getJSON('http://whateverorigin.org/get?url=' + 
+            encodeURIComponent(url) + '&callback=?',
+            function(data) {
+                //$("#capabilities").html(data.contents);
+                document.getElementById('capabilities').innerHTML = data.contents;
+                var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+                  mode: "application/xml",
+                  lineNumbers: true
+                });
+            });
+        </script>
         <script src="../proj4js-compressed.js" type="text/javascript">
         </script>
         <script src="http://spatialreference.org/ref/epsg/4326/proj4js/" type="text/javascript">
