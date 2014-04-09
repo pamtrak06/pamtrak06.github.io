@@ -120,6 +120,49 @@ loadCapabilitiesAsync = (function(urlCapabilities){
     return mapLayers;
 });
 
+// --------------------------------------------
+// Read capabilities (Asynchronous request)
+// --------------------------------------------
+// Parameters
+//  - urlCapabilities : url of the apabilities
+// --------------------------------------------
+loadCapabilitiesCrossOrigin = (function(urlCapabilities){
+  var parser = new ol.parser.ogc.WMSCapabilities(), xmlDoc, layers;
+  var mapLayers = {};
+
+  $.getJSON('http://whateverorigin.org/get?url=' + 
+    encodeURIComponent(urlCapabilities) + '&callback=?',
+    function(data) {
+        //$("#capabilities").html(data.contents);
+        document.getElementById('capabilities').innerHTML = data.contents;
+
+        var xmlDoc = parser.read(data.contents);
+        var layers = xmlDoc.capability.layers;
+
+        // Record each layer
+        for (var l = 0; l < layers.length; ++l) {
+            var layer = layers[l];
+
+            // Add layer to map (key=layer.name, value=layer)
+            mapLayers[layer.name] = layer;
+
+            //console.log('Layer:' + layer.name);
+            //console.log('\tAvailable styles: ' + layer.styles);
+            //console.log('\tAvailable times: ' + layer.dimensions.time.values);
+            //console.log('\tAvailable elevations: ' + layer.dimensions.elevation.values);
+
+        }    
+        setStore("mapLayers", mapLayers);
+        
+        var editor = CodeMirror.fromTextArea(document.getElementById("capabilities"), {
+          mode: "application/xml",
+          lineNumbers: true
+        });
+    });    
+
+});
+
+
 
 // --------------------------------------------
 // Populate map options from capabilities
@@ -129,7 +172,9 @@ loadCapabilitiesAsync = (function(urlCapabilities){
 // --------------------------------------------
 populateMapOptionsFromCapabilities = (function(urlCapabilities){
 
-    var mapLayers = loadCapabilities(urlCapabilities);
+    //var mapLayers = loadCapabilities(urlCapabilities);
+    loadCapabilitiesCrossOrigin(urlCapabilities);
+    var mapLayers = getStore("mapLayers");
     
     populateLayersOptions(mapLayers);
     
@@ -472,6 +517,7 @@ buildMapWmts = (function(mapUrl, mapDiv, tileset, time, elevation){
     mapWmts.addControl(fullScreen);
     mapWmts.addControl(extent);
     
+    mapLoadStatus(mapWmts);
     
     return mapWmts;
     
@@ -564,6 +610,7 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     mapWms.addControl(fullScreen);
     mapWms.addControl(extent);
     
+    mapLoadStatus(mapWms);
     
     return mapWms;
     
@@ -613,6 +660,24 @@ buildMapFromDiv = (function(){
     }
 });
 
+// --------------------------------------------
+// Build a new map from div id's
+// --------------------------------------------
+mapLoadStatus = (function(map){
+    map.on('singleclick', function(evt) {
+        map.getFeatures({
+          pixel: evt.getPixel(),
+          //layers: [countries], // optional
+          success: function(result) {
+            $('#info').html('');
+            for (var i = 0, ii = result[0].length; i < ii; ++i) {
+              $('#info').append(result[0][i].get('name') + '<br>');
+            }
+          }
+        });
+    });
+});
+
 updateService = (function(){
     if (service == 'WMS') {
         document.getElementById("mapUrl").value = 'http://geo.weather.gc.ca/geomet/?lang=E';
@@ -624,6 +689,8 @@ updateService = (function(){
 
 init = (function(){
     document.getElementById("mapUrl").value = 'http://geo.weather.gc.ca/geomet/?lang=E';
-    populateMapOptionsFromCapabilities('WMSCapabilities.xml');
+    //populateMapOptionsFromCapabilities('WMSCapabilities.xml');
+      var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+    populateMapOptionsFromCapabilities(url);
     buildMapFromDiv();
 });
