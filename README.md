@@ -1,3 +1,3 @@
 Projects
 
-pamtrak06.github.io
+http://pamtrak06.github.io
