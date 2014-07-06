@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Airport</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&extension=.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="http://use.typekit.net/hse2lqc.js"></script>
+  <!--script>
+    try{Typekit.load();}catch(e){}    script(src='js/bootstrap.min.js')
+  </script-->
+  <link rel="stylesheet" type="text/css" href="icons/weather/weather-icons-master/css/weather-icons.min.css">
+  <script src="http://ksylvest.github.io/jquery-spin/javascripts/jquery.spin.js" type="text/javascript"></script>
+  <link href="http://ksylvest.github.io/jquery-spin/stylesheets/jquery.spin.css" rel="stylesheet" type="text/css" /> 
+<style>
+label
+{
+	display: block;
+	width: 200px;
+	float: left;
+}
+select {
+  width: 120px;
+  text-align:right;
+}
+.idButton {
+    float:right;
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+	background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+	background-color:#3d94f6;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #337fed;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:65px;
+	line-height:65px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #1570cd;
+}
+.idButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background-color:#1e62d0;
+}.idButton:active {
+	position:relative;
+	top:1px;
+}
+'.datePicker {
+'    border-radius: 5px; 
+'    -moz-border-radius: 5px; 
+'    -webkit-border-radius: 5px; 
+'    border: 1px solid #000000;
+'}
+table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+</style>
+<style>
+#facebookG{
+width:128px;
+float:right;}
+
+.facebook_blockG{
+background-color:#1495D1;
+border:3px solid #71C1DE;
+float:right;
+height:91px;
+margin-right:7px;
+width:24px;
+opacity:0.1;
+-moz-animation-name:bounceG;
+-moz-animation-duration:1.3s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-moz-transform:scale(0.7);
+-webkit-animation-name:bounceG;
+-webkit-animation-duration:1.3s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-webkit-transform:scale(0.7);
+-ms-animation-name:bounceG;
+-ms-animation-duration:1.3s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-ms-transform:scale(0.7);
+-o-animation-name:bounceG;
+-o-animation-duration:1.3s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+-o-transform:scale(0.7);
+animation-name:bounceG;
+animation-duration:1.3s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+transform:scale(0.7);
+}
+
+#blockG_1{
+-moz-animation-delay:0.39s;
+-webkit-animation-delay:0.39s;
+-ms-animation-delay:0.39s;
+-o-animation-delay:0.39s;
+animation-delay:0.39s;
+}
+
+#blockG_2{
+-moz-animation-delay:0.52s;
+-webkit-animation-delay:0.52s;
+-ms-animation-delay:0.52s;
+-o-animation-delay:0.52s;
+animation-delay:0.52s;
+}
+
+#blockG_3{
+-moz-animation-delay:0.65s;
+-webkit-animation-delay:0.65s;
+-ms-animation-delay:0.65s;
+-o-animation-delay:0.65s;
+animation-delay:0.65s;
+}
+
+@-moz-keyframes bounceG{
+0%{
+-moz-transform:scale(1.2);
+opacity:1}
+
+100%{
+-moz-transform:scale(0.7);
+opacity:0.1}
+
+}
+
+@-webkit-keyframes bounceG{
+0%{
+-webkit-transform:scale(1.2);
+opacity:1}
+
+100%{
+-webkit-transform:scale(0.7);
+opacity:0.1}
+
+}
+
+@-ms-keyframes bounceG{
+0%{
+-ms-transform:scale(1.2);
+opacity:1}
+
+100%{
+-ms-transform:scale(0.7);
+opacity:0.1}
+
+}
+
+@-o-keyframes bounceG{
+0%{
+-o-transform:scale(1.2);
+opacity:1}
+
+100%{
+-o-transform:scale(0.7);
+opacity:0.1}
+
+}
+
+@keyframes bounceG{
+0%{
+transform:scale(1.2);
+opacity:1}
+
+100%{
+transform:scale(0.7);
+opacity:0.1}
+
+}
+/* See more at: http://cssload.net/#sthash.P2FE6Dxx.dpuf */
+</style>
+<style>
+#squaresWaveG{
+position:relative;
+width:420px;
+height:20px;
+float:left;}
+
+.squaresWaveG{
+position:absolute;
+top:0;
+background-color:#71C1DE;
+width:59px;
+height:20px;
+-moz-animation-name:bounce_squaresWaveG;
+-moz-animation-duration:1.3s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-animation-name:bounce_squaresWaveG;
+-webkit-animation-duration:1.3s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-animation-name:bounce_squaresWaveG;
+-ms-animation-duration:1.3s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-animation-name:bounce_squaresWaveG;
+-o-animation-duration:1.3s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+animation-name:bounce_squaresWaveG;
+animation-duration:1.3s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+#squaresWaveG_1{
+left:0;
+-moz-animation-delay:0.52s;
+-webkit-animation-delay:0.52s;
+-ms-animation-delay:0.52s;
+-o-animation-delay:0.52s;
+animation-delay:0.52s;
+}
+
+#squaresWaveG_2{
+left:60px;
+-moz-animation-delay:0.65s;
+-webkit-animation-delay:0.65s;
+-ms-animation-delay:0.65s;
+-o-animation-delay:0.65s;
+animation-delay:0.65s;
+}
+
+#squaresWaveG_3{
+left:120px;
+-moz-animation-delay:0.78s;
+-webkit-animation-delay:0.78s;
+-ms-animation-delay:0.78s;
+-o-animation-delay:0.78s;
+animation-delay:0.78s;
+}
+
+#squaresWaveG_4{
+left:180px;
+-moz-animation-delay:0.91s;
+-webkit-animation-delay:0.91s;
+-ms-animation-delay:0.91s;
+-o-animation-delay:0.91s;
+animation-delay:0.91s;
+}
+
+#squaresWaveG_5{
+left:240px;
+-moz-animation-delay:1.04s;
+-webkit-animation-delay:1.04s;
+-ms-animation-delay:1.04s;
+-o-animation-delay:1.04s;
+animation-delay:1.04s;
+}
+
+#squaresWaveG_6{
+left:300px;
+-moz-animation-delay:1.17s;
+-webkit-animation-delay:1.17s;
+-ms-animation-delay:1.17s;
+-o-animation-delay:1.17s;
+animation-delay:1.17s;
+}
+
+#squaresWaveG_7{
+left:360px;
+-moz-animation-delay:1.3s;
+-webkit-animation-delay:1.3s;
+-ms-animation-delay:1.3s;
+-o-animation-delay:1.3s;
+animation-delay:1.3s;
+}
+
+#squaresWaveG_8{
+left:420px;
+-moz-animation-delay:1.43s;
+-webkit-animation-delay:1.43s;
+-ms-animation-delay:1.43s;
+-o-animation-delay:1.43s;
+animation-delay:1.43s;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+0%{
+background-color:#71C1DE;
+}
+
+100%{
+background-color:#1495D1;
+}
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+0%{
+background-color:#71C1DE;
+}
+
+100%{
+background-color:#1495D1;
+}
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+0%{
+background-color:#71C1DE;
+}
+
+100%{
+background-color:#1495D1;
+}
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+0%{
+background-color:#71C1DE;
+}
+
+100%{
+background-color:#1495D1;
+}
+
+}
+
+@keyframes bounce_squaresWaveG{
+0%{
+background-color:#71C1DE;
+}
+
+100%{
+background-color:#1495D1;
+}
+
+}
+
+</style>
+    
+</head>   
+<body onload="loadCountries();">
+    <!--div class="spin" data-spin /-->
+    <label for="idCountry">Pays :</label>
+    <select id="idCountry">
+        <option>Spain</option>
+        <option selected>France</option>
+        <option>Italy</option>
+    </select><br />
+    
+    <label for="idAirports">Aéroports :</label>
+    <select id="idAirports">
+        <option value=''>ALL</option>
+    </select>
+    <input type="button" id="idButton" value="VOIR LES DONNEES"/><br />
+<!--div id="facebookG">
+    <div id="blockG_1" class="facebook_blockG"></div>
+    <div id="blockG_2" class="facebook_blockG"></div>
+    <div id="blockG_3" class="facebook_blockG"></div>
+</div-->
+    
+    <div id="squaresWaveG">
+        <div id="squaresWaveG_1" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_2" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_3" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_4" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_5" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_6" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_7" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_8" class="squaresWaveG">
+        </div>
+    </div>  
+    <table id="airportDataTable">
+    <tr>
+        <th>code</th>
+        <th>position</th>
+        <th>name</th>
+        <th>city</th>
+        <th>state</th>
+        <th>country</th>
+        <th>weather</th>
+    </tr>
+    
+    <div id="map_canvas" style="width: 100%; height: 400px;"></div>
+</table>
+</body>
+<script>
+//http://airportcode.riobard.com/about
+//http://weather.noaa.gov/weather/current/LFBF.html
+//http://avdata.geekpilot.net/
+// http://openflights.org/data.html
+
+// Forecast : https://openmeteoforecast.org/wiki/API/0.1/Fr
+//http://api.ometfn.net/0.1/forecast/eu12/44.5,6.32/now.json
+// weather : http://www.wunderground.com/cgi-bin/findweather/getForecast?query=pws:IMIDIPYR43
+$.support.cors = true;
+    // http://airports.pidgets.com/v1/airports/FRA?callback=jQuery110203503039265051484_1404072156839&callback=1404072156840
+    // http://jsfiddle.net/mmansion/6WHKQ/
+    // decode metar : http://www.skystef.be/metar-decoder.htm
+$(document).ready(function () {
+    
+    $("#loading")
+        .ajaxStart(function(){ $(this).show(); })
+        .ajaxStop(function(){ $(this).hide(); });
+    
+    $('#idCountry').change(function () {
+        var country = $('#idCountry').val();
+
+        //$('.spin').spin('show');        
+        //$('#facebookG').show();
+        $('#squaresWaveG').show();
+        
+        // Get list of airports for one country
+        $.ajax({
+            type: 'GET',
+            url: 'http://airports.pidgets.com/v1/airports/?format=json',
+            async: false,
+            cache: true,
+            contentType: 'application/json',
+            dataType: 'jsonp',
+            //jsonpCallback: 'alert',
+            success: function(data) {
+                $('#idAirports').empty();
+                $('#idAirports').append("<option value=''>ALL</option>");
+                $.each(data, function(index, item) {
+                    if (item.country == country) {
+                        $('#idAirports').append("<option value=" + item.code + ">" + item.name + "</option>");
+                    }
+                });
+                //$('.spin').spin('hide');
+                //$('#facebookG').hide();
+                $('#squaresWaveG').hide();
+            },
+            error: function(e) {
+               console.log(e.message);
+               //$('.spin').spin('hide');
+               //$('#facebookG').hide();
+               $('#squaresWaveG').hide();
+            }
+        });
+    });
+    
+    // result for an airport
+    $('#idButton').click(function () {    
+        
+        var code = $('#idAirports').val();
+        var country = $('#idCountry').val();
+        //$('#facebookG').show();
+        $('#squaresWaveG').show();
+        $.ajax({
+           type: 'GET',
+            url: "http://airports.pidgets.com/v1/airports/" + code + "?format=json",
+            async: false,
+            cache: true,
+            //jsonp : "callback",
+            contentType: "application/json",
+            dataType: 'jsonp',
+            //jsonpCallback: 'alert',
+            success: function(data) {
+                $('#airportDataTable').empty();
+                var row = $("<tr />")
+                $("#airportDataTable").append(row);
+                row.append($("<th>code</th>"));
+                row.append($("<th>position</th>"));
+                row.append($("<th>name</th>"));
+                row.append($("<th>city</th>"));
+                row.append($("<th>state</th>"));
+                row.append($("<th>country</th>"));
+                row.append($("<th>weather</th>"));
+
+                drawTable(data);
+                //$('#facebookG').hide();
+                $('#squaresWaveG').hide();
+            },
+            error: function(e) {
+               console.log(e.message);
+                //$('#facebookG').hide();
+                $('#squaresWaveG').hide();
+            }
+        });        
+        
+        function drawTable(data) {
+            $.each(data, function(index, item) {
+                if (item.country == country) {
+                    drawRow(item);
+                }
+            });
+        }
+
+        function drawRow(rowData) {
+            var row = $("<tr />")
+            $("#airportDataTable").append(row);
+            var position = rowData.lat + ',' + rowData.lon;
+            var iconMarker = "http://cdn.flaticon.com/png/32/9958.png";
+            var urlForecast = "<a href=http://forecast.io/#/f/" + position + ">forecast</a>";
+            addMarker(rowData.lat, rowData.lon, 'Airport: ' + rowData.name + '<br />' + urlForecast, iconMarker);
+            //addMarkerWeather(rowData.lat, rowData.lon, position, rowData.name);
+            row.append($("<td>" + rowData.code + "</td>"));
+            row.append($("<td>" + position + "</td>"));
+            row.append($("<td>" + rowData.name + "</td>"));
+            row.append($("<td>" + rowData.city + "</td>"));
+            row.append($("<td>" + rowData.state + "</td>"));
+            row.append($("<td>" + rowData.country + "</td>"));
+            row.append($("<td>" + urlForecast + "</td>"));
+            //row.append($("<td><a href=http://api.ometfn.net/0.1/forecast/eu12/"+position+"/now.json>weather now</a></td>"));
+            
+        }
+        // Weather api
+        // http://api.met.no/weatherapi/documentation => NULL BAD forecast !!
+        // https://github.com/iantearle/forecast.io-javascript-api => BEST with API key !!
+        // http://www.programmableweb.com/news/26-weather-apis-12-support-json/2012/01/11 => full of weather api
+        
+        // airport api
+        // http://openflights.org/about
+        
+        // js
+        // waiting : http://ksylvest.github.io/jquery-spin/
+        // loading with css : http://cssload.net/
+        
+        // geo
+        // world geojson: https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json
+        
+        function addMarkerWeather(lat, lon, position, name) {
+            
+            
+            /*
+            $.ajax({
+               type: 'GET',
+                // see https://openmeteoforecast.org/wiki/API
+                //url: 'http://api.ometfn.net/0.1/forecast/eu12/'+position+'/now.json',
+                url : "http://forecast.io/forecast?q=" + position + "&satellites&raw",
+                async: false,
+                cache: true,
+                //jsonp : "callback",
+                contentType: "application/json",
+                dataType: 'json',
+                //jsonpCallback: 'alert',
+                success: function(data) {
+                    //var iconMarker = "http://png.findicons.com/files/icons/725/colobrush/32/paper_plane.png";
+                    //var iconMarker = "http://png.findicons.com/files/icons/101/old_school/32/avion.png";
+                    //var iconMarker = "http://cdn.flaticon.com/png/32/48875.png";
+                    var iconMarker = "http://cdn.flaticon.com/png/32/9958.png";
+                    var urlForecast = "<a href=http://forecast.io/#/f/" + position + ">forecast</a>";
+                    var iconWeather;                    
+                    // see http://erikflowers.github.io/weather-icons/
+                    if (data.currently.precipType  == 'rain') {
+                      iconWeather = '<i class=\"wi wi-day-thunderstorm\">';
+                    } else {
+                      iconWeather = '<i class=\"wi wi-day-sunny\">';
+                    } 
+                    addMarker(lat, lon, 'Airport: ' + name + '<br />' + iconWeather + '<br />' + urlForecast, iconMarker);
+                },
+                error: function(e) {
+                   console.log(e.message);
+                }
+            });
+            */
+        }  
+
+    });
+    
+    var map;    
+    (function () {
+        //$('.spin').spin('hide');
+        //$('#facebookG').show();
+        $('#squaresWaveG').show();
+        // get ip position
+        $.getJSON('http://www.telize.com/geoip?callback=?', function(json) {
+            // create google maps
+            var pos = new google.maps.LatLng(json.latitude, json.longitude);
+            map = new google.maps.Map($('#map_canvas')[0], {
+                center: pos,
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROAD
+            });
+            
+            addMarker(json.latitude, json.longitude, 'You are here !!', 'http://findicons.com/files/icons/1035/human_o2/48/start_here_gnome_black.png');
+            //$('#facebookG').hide();
+            $('#squaresWaveG').hide();
+        });
+
+
+    })();
+    
+ 
+    function addMarker(lat, lon, tooltipContent, icon) {
+        var pos = new google.maps.LatLng(lat, lon);
+
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            icon: icon,
+            size: new google.maps.Size(120, 80),
+        });
+        marker.tooltipContent = tooltipContent;
+        var infoWindow = new google.maps.InfoWindow({
+            content: tooltipContent
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            infoWindow.open(map, marker);
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', function () {
+            var point = fromLatLngToPoint(marker.getPosition(), map);
+            $('#marker-tooltip').html(marker.tooltipContent + '<br>Pixel coordinates: ' + point.x + ', ' + point.y).css({
+                'left': point.x,
+                    'top': point.y
+            }).show();
+        });
+
+        google.maps.event.addListener(marker, 'mouseout', function () {
+            $('#marker-tooltip').hide();
+        });
+    } 
+
+    function fromLatLngToPoint(latLng, map) {
+        var topRight = map.getProjection().fromLatLngToPoint(map.getBounds().getNorthEast());
+        var bottomLeft = map.getProjection().fromLatLngToPoint(map.getBounds().getSouthWest());
+        var scale = Math.pow(2, map.getZoom());
+        var worldPoint = map.getProjection().fromLatLngToPoint(latLng);
+        return new google.maps.Point((worldPoint.x - bottomLeft.x) * scale, (worldPoint.y - topRight.y) * scale);
+    }
+});
+
+  function loadCountries() {
+        // load all countries
+        $.getJSON('countries.geo.json', function(data) {
+            $('#idCountry').empty();
+            $.each(data.features , function(index, item) {
+                if (item.id == 'FRA') {
+                   $('#idCountry').append("<option value=" + item.properties.name + " selected>" + item.properties.name + ' (' + item.id + ')' + "</option>");
+                } else {
+                   $('#idCountry').append("<option value=" + item.properties.name + ">" + item.properties.name + ' (' + item.id + ')' + "</option>"); 
+                }
+            });  
+        });
+   }  
+
+</script>
+</html>
