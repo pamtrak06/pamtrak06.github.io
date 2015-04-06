@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- GOOGLE MAPS + WEBGL, load local json data conerted to geojson                              -->
+        <!--    STARTING POINT                                                                          -->
+        <!--       - WebGL Layer:               https://github.com/mattcooper/webgl-layer               -->
+        <!--                                    http://googlegeodevelopers.blogspot.fr/2014/10
+                                                /mixing-maps-and-webgl-to-visualize-huge.html           -->
+        <!--                                    http://bl.ocks.org/migurski/5024953                     -->
+        <!--
+                     WebGL Layer is an experimental extension of Google Maps to provide 
+                     support for WebGL integration and data manipulation. 
+                     WebGL Layer provides you with:
+
+                        Ability to load GeoJSON data and display with WebGL.
+                        Ability to alter some properties of loaded data (i.e color).
+                        Ability to define custom shaders and properties on data.
+                        Ability to plug into a vector tile server for data.
+        -->
+        <!--    USED FRAMEWORK                                                                          -->
+        <!--       - GEOJSON specifications:    http://geojson.org/                                     -->
+        <!--       - GEOJSON validation:        https://github.com/mapbox/geojsonhint                   -->
+        <!--       - GEOJSON online:            http://geojsonlint.com/                                 -->
+        <!--       - GEOJSON online:            http://geojson.io/                                      -->
+        <!--       - GEOJSON utilities:         https://github.com/maxogden/geojson-js-utils            -->
+        <!--       - JQUERY doc/json:           http://api.jquery.com/jquery.getjson/                   -->
+        <!--    DATA SOURCE                                                                             -->
+        <!--       - JQUERY doc/json:           http://airports.pidgets.com/v1/airports/?format=json    -->
+
+        <!-- Import Google maps API and Dependencies. -->
+        <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=places,drawing"></script>
+
+        <!-- Import JQuery and Dependencies. -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        
+        <!-- Import JQuery UI and Dependencies. -->
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css">
+
+        <!-- Import JSon and Dependencies. -->
+        <script type="text/javascript" src="../geojson/geojsonhint.js"></script>
+
+        <!-- Import WebGL Layer and Dependencies. -->
+        <script type="text/javascript" src="CanvasLayer.js"></script>
+        <script type="text/javascript" src="ShaderProgram.js"></script>
+        <script type="text/javascript" src="libtess.cat.js"></script>
+        <script type="text/javascript" src="WebGLLayer.js"></script>
+
+        <!-- Import Codemirror and Dependencies. -->
+        <link rel="stylesheet" href="../codemirror/codemirror.css">
+        <link rel="stylesheet" href="../theme/ambiance.css">
+        <script src="../codemirror/codemirror.js"></script>
+        <script src="../codemirror/xml.js"></script>
+        <script src="../codemirror/javascript.js"></script>
+        <script src="../codemirror/css.js"></script>
+        <script src="../codemirror/htmlmixed.js"></script>
+        <style type="text/css">
+          .lineblock { display: inline-block; margin: 1px; height: 5px; }
+          .CodeMirror {border: 1px solid #aaa; height: 400px; color:#aaa }
+        </style>
+
+        <!-- Import Bootstrap and Dependencies. -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <script>
+            var map;
+            var myLayer;
+
+//             var progressbar = $("#progressbar"),
+//                  progressLabel = $(".progress-label");
+//
+//              progressbar.progressbar({
+//                  value: false,
+//                  change: function () {
+//                      progressLabel.text(progressbar.progressbar("value") + "%");
+//                  },
+//                  complete: function () {
+//                      progressLabel.text("Complete!");
+//                  }
+//              });
+//
+//              function progress(value) {
+//                  var val = progressbar.progressbar("value") || 0;
+//
+//                  progressbar.progressbar("value", val + value);
+//
+//                  if (val < 99) {
+//                      setTimeout(progress, 100);
+//                  }
+//              }
+            
+            function init(){
+                var mapOptions = {
+                    zoom: 4,
+                    center: new google.maps.LatLng(43.600327, 1.443913),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                };
+
+                var mapCanvas = document.getElementById('map-canvas');
+                map = new google.maps.Map(mapCanvas, mapOptions);
+
+                // create Webgl layer
+                myLayer = new WebGLLayer(map);
+                
+                // read local json file and convert to geojson string
+                // file coming from bad result of json callback : 'http://airports.pidgets.com/v1/airports/?format=json',
+                $.getJSON("../airports.json", function(data) {
+                    var features = [];
+                    // create geojson feature
+                    $( "#progressbar" ).progressbar({ value: 20 });
+                    $.each( data, function( i, item ) {
+                        var properties = window.JSON.stringify(item, undefined, 2);
+                        var obj = '{ "type": "Feature", "geometry": {"type": "Point", "coordinates": [' + item.lon + ', ' + item.lat + ']}, "properties": ' +  properties + ' }';
+                        var feature = JSON.parse(obj);
+                        features[i] = feature;
+                    });
+                    $( "#progressbar" ).progressbar({ value: 50 });
+                    // create geojson object
+                    var collection = '{ "type": "FeatureCollection", "features" : ' + window.JSON.stringify(features, undefined, 2) + '}';
+
+                    // check geojson object
+                    errors = geojsonhint.hint(collection);
+                    console.log( "json validation: " + errors);
+                    var featureCollection = JSON.parse(collection);
+                    $( "#progressbar" ).progressbar({ value: 70 });
+
+                    // loading GeoJSON from an object.
+                    myLayer.loadData(featureCollection);
+                    $( "#progressbar" ).progressbar({ value: 100 });
+                    $(".progress-label").text("Complete!");;
+                })
+                .done(function(data) {
+                    console.log( "second success" );
+                })
+                .fail(function() {
+                    console.log( "error" );
+                })
+                .always(function() {
+                    console.log( "complete" );
+                });
+                    
+                myLayer.start();
+            }
+        </script>
+        <style>
+        #map-canvas 
+        { 
+            height: 400px; 
+            width: 500px;
+        }
+        #code-canvas 
+        { 
+            height: 400px; 
+            width: 500px;
+        }
+        .progress-label {
+            float: left;
+            margin-left: 50%;
+            margin-top: 5px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+        }
+        </style>
+    <!--    <style>.CodeMirror {border-width: 500px; }</style>-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Webgl + google maps example</h1>
+                <p class="lead">Example build from <a href="https://github.com/mattcooper/webgl-layer">WebGl Layer</a>, 
+                    showing world airport from <a href="http://airports.pidgets.com/v1/airports/?format=json">geojson file</a></p>                
+            </div>
+            <div class="row">
+                <!-- webgl map -->
+                <div class="col-md-4">
+                    <div id="map-canvas"></div> 
+                </div>
+
+                <!-- self html code source -->
+                <div class="col-md-8">
+                    <form>
+                        <textarea id="code-canvas" name="code-canvas"></textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div id="progressbar">
+                    <div class="progress-label">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- script locading all html content in codemirror textarea -->
+        <script>
+          // write all html content to textarea with id "airport-webgl"
+          document.getElementById('code-canvas').innerHTML = document.documentElement.innerHTML;
+
+          // mixed mode for codemirror    
+          var mixedMode = {
+            name: "htmlmixed",
+            scriptTypes: [{matches: /\/x-handlebars-template|\/x-mustache/i,
+                           mode: null},
+                          {matches: /(text|application)\/(x-)?vb(a|script)/i,
+                           mode: "vbscript"}]
+          };
+
+          // content of codemirror    
+          var editor = CodeMirror.fromTextArea(document.getElementById('code-canvas'), {
+            mode: mixedMode,
+            selectionPointer: true
+          });
+        </script>
+        <script>
+           $(document).ready(function () {
+              init() ;
+           });
+        </script>
+    </body>
+ 
+</html>
