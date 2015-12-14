@@ -532,9 +532,8 @@ buildMapWmts = (function(mapUrl, mapDiv, tileset, time, elevation){
 //  - mapDiv : div id for the map
 //  - layer : name of the layer
 //  - time : time
-//  - elevation : elevation
 // --------------------------------------------
-buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
+buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time){
     var PROJ_ = 'EPSG:4326';
     var EXTENT_ = [-180.0, -90.0, 180.0, 90.0];
     
@@ -645,7 +644,7 @@ buildMapWmsFromDiv = (function(){
     var time = document.getElementById('times').value;
     //var elevation = document.getElementById('elevations').value;
     
-    return buildMapWms(mapUrl, mapDiv, layer, style, time, elevation);
+    return buildMapWms(mapUrl, mapDiv, layer, style, time);
 });
 
 // --------------------------------------------
