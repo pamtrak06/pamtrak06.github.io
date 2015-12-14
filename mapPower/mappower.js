@@ -558,7 +558,7 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     dataLayer = new ol.layer.Image({
         source: new ol.source.ImageWMS({
             //url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
-            url: mapUrl + sep + 'time=' + time 
+            url: mapUrl + sep + 'time=' + time, 
             crossOrigin: null,
             attributions: [new ol.Attribution({
                 html: '&copy; ' +
