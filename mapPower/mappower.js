@@ -557,7 +557,8 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     
     dataLayer = new ol.layer.Image({
         source: new ol.source.ImageWMS({
-            url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
+            //url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
+            url: mapUrl + sep + 'time=' + time 
             crossOrigin: null,
             attributions: [new ol.Attribution({
                 html: '&copy; ' +
@@ -642,7 +643,7 @@ buildMapWmsFromDiv = (function(){
     var layer = document.getElementById('layers').value;
     var style = document.getElementById('styles').value;
     var time = document.getElementById('times').value;
-    var elevation = document.getElementById('elevations').value;
+    //var elevation = document.getElementById('elevations').value;
     
     return buildMapWms(mapUrl, mapDiv, layer, style, time, elevation);
 });
@@ -690,7 +691,7 @@ updateService = (function(){
 init = (function(){
     document.getElementById("mapUrl").value = 'http://geo.weather.gc.ca/geomet/?lang=E';
     //populateMapOptionsFromCapabilities('WMSCapabilities.xml');
-      var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+    var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
     populateMapOptionsFromCapabilities(url);
     buildMapFromDiv();
 });
