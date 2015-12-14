@@ -180,7 +180,7 @@ populateMapOptionsFromCapabilities = (function(urlCapabilities){
     
     populateStylesOptions(mapLayers);
     populateTimesOptions(mapLayers);
-    populateElevationsOptions(mapLayers);
+    //populateElevationsOptions(mapLayers);
     
 });
 
@@ -303,7 +303,7 @@ updateLayerOptions = (function(){
     var mapLayers = getStore("mapLayers");
     populateStylesOptions(mapLayers);
     populateTimesOptions(mapLayers);
-    populateElevationsOptions(mapLayers);
+    //populateElevationsOptions(mapLayers);
 });
 
 
