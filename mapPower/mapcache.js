@@ -82,7 +82,7 @@ buildMapcacheXmlFromContent = (function(capabilitiesXmlContent, urlRequestCapa, 
         layer = layers[l];
 
         console.log('Layer:' + layer.name);
-        console.log('\tAvailable elevations: ' + layer.dimensions.elevation.values);
+        //console.log('\tAvailable elevations: ' + layer.dimensions.elevation.values);
         console.log('\tAvailable times: ' + layer.dimensions.time.values);
 
         var arrayTab = layer.styles;
