@@ -171,7 +171,7 @@ buildMapcacheXmlFromContent = (function(capabilitiesXmlContent, urlRequestCapa, 
     mapcache += '  &lt;lock_dir&gt;/tmp/' + project + '&lt;/lock_dir&gt;\n';
     mapcache += '  &lt;threaded_fetching&gt;true&lt;/threaded_fetching&gt;\n';
     mapcache += '  &lt;log_level&gt;debug&lt;/log_level&gt;\n';
-    mapcache += '  &lt;auto_reload&gt;true&lt/auto_reload&gt; \n';
+    mapcache += '  &lt;auto_reload&gt;true&lt;/auto_reload&gt; \n';
 
 
     mapcache += '&lt;/mapcache&gt;\n';

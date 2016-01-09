@@ -1,8 +1,468 @@
-<html>
-  <a href="mapPower">Web map Openlayer + WMS</a>
-  <br />
-  <a href="airport.html">Airport weather map</a>
-  <br />
-  <a href="globe-alerts.html">Airport alerts</a>
-  <br />
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Pamtrak06 - maps, gis     and ...</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
+		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+		<!-- skin -->
+		<link rel="stylesheet" href="skin/default.css">
+    </head>
+	 
+    <body>
+		<section id="header" class="appear"></section>
+		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+			 <div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="fa fa-bars color-white"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">
+                    <img src="http://www.gravatar.com/avatar/b2071759b3f1fc6f1b02edbb46397c9a.png?s=50"/>
+					</a></h1>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="#section-about">Map creations</a></li>
+						<li><a href="#section-works">Map tuto</a></li>
+						<li><a href="#section-contact">Contact</a></li>
+					</ul>
+				</div><!--/.navbar-collapse -->
+			</div>
+		</div>
+
+		<section class="featured">
+			<div class="container"> 
+				<div class="row mar-bot40">
+					<div class="col-md-6 col-md-offset-3">
+						
+						<div class="align-center">
+                            <img src="img/logo_pamtrak06_4.jpg" />
+<!--                            <img src="img/top_header.jpg" />-->
+                            <blockquote class="bigquote color-white"></blockquote>	
+                            <blockquote class="bigquote color-white"></blockquote>	
+							<p>
+                                Open source map and gis technologies. Map servers, caching software, web mapping clients and applications,
+                                tools and hosted platform.
+                                <br />
+                                Everyone is free to use or reproduce any information contained on this website. 
+                                But all is provided as an example, the creator assumes no responsibility for any loss or damage caused by software and related codes. 
+							</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- services -->
+		<section id="section-services" class="section pad-bot30 bg-white">
+		<div class="container"> 
+		
+			<div class="row mar-bot40">
+				
+                <div class="col-lg-4" >
+					<div class="align-center">
+                        <!--<i class="fa fa-code fa-5x mar-bot20">-->
+                        <a href="https://hub.docker.com/u/pamtrak06/"><img src="img/docker_small_v-dark_150.jpg" /></i></a>
+						<h4 class="text-bold"><a href="https://hub.docker.com/u/pamtrak06/">GIS Docker</a></h4>
+                        <p>Docker container's giving access to mapserver 6.4.1/7.0, mapcache, rok4 server, grass, fwtools ...
+						</p>
+					</div>
+				</div>
+            
+                <div class="col-lg-4" >
+					<div class="align-center">
+                        <!--<i class="fa fa-code fa-5x mar-bot20">-->
+                        <a href="#section-works"><img src="img/logo_map_howto_150.jpg" /></i></a>
+						<h4 class="text-bold"><a href="#section-works">GIS how to</a></h4>
+						<p>Tutorial for gis and mapping technologies.
+						</p>
+					</div>
+				</div>
+		
+                <div class="col-lg-4" >
+					<div class="align-center">
+                        <!--<i class="fa fa-code fa-5x mar-bot20">-->
+                        <a href="#"><img src="img/logo_map_watchman_150_2_work.jpg" /></i></a>
+						<h4 class="text-bold"><a href="#">Technological watch</a></h4>
+						<p>Last tech. but not the least !
+						</p>
+					</div>
+				</div>
+					
+			</div>
+            <br /><br />
+		</div>
+		</section>
+			
+		<!-- spacer section:testimonial -->
+		<section id="testimonials" class="section" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row">				
+					<div class="col-lg-12">
+							<div class="align-center">
+										<div class="testimonial pad-top40 pad-bot40 clearfix">
+											<h5>
+											</h5>
+											<br/>
+											<span class="author">&mdash; pamtrak06 - <a href="#">pamtrak06@gmail.com</a></span>
+										</div>
+
+								</div>
+							</div>
+					</div>
+				
+			</div>	
+		</div>
+        <br /><br />
+		</section>
+			
+		<!-- about -->
+		<section id="section-about" class="section appear clearfix">
+		<div class="container">
+
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Map creations</h2>
+							<p>You will find here some map creation.</p>
+						</div>
+					</div>
+				</div>
+
+                <div class="row align-center mar-bot40">
+                    <div class="col-md-2">
+                        <div class="team-member">
+<!--
+                            <figure class="member-photo"><a href="mapPower"><img src="img/ol3-150x150.png" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="mapPower">WMS APP</a></h4>
+                                <span>#Use ol3js</span>
+                            </div>
+-->
+                        </div>
+                    </div>     
+                    <div class="col-md-2">
+                        <div class="team-member">
+                            <figure class="member-photo"><a href="mapPower"><img src="img/wms_app_100.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="mapPower">WMS APP</a></h4>
+                                <span>#Use ol3js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="team-member">
+                            <figure class="member-photo"><a href="webgl-layer/airports.html"><img src="img/webgl_gmap_app.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="webgl-layer/airports.html">WebGl Layer</a></h4>
+                                <span>#Use webgl</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="team-member">
+                            <figure class="member-photo"><a href="webgl-earth/airports.html"><img src="img/webgl_earth_app.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="webgl-earth/airports.html">WebGl Earth</a></h4>
+                                <span>#Use webgl</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="team-member">
+                            <figure class="member-photo"><a href="globe-alerts.html"><img src="img/webgl_app.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="globe-alerts.html">WEBGL APP</a></h4>
+                                <span>#Use webgl</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="team-member">
+<!--
+                            <figure class="member-photo"><a href="globe-alerts.html"><img src="img/webgl_app.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="globe-alerts.html">WEBGL APP</a></h4>
+                                <span>#Use webgl</span>
+                            </div>
+-->
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="team-member">
+<!--
+                            <figure class="member-photo"><a href="globe-alerts.html"><img src="img/webgl_app.jpg" alt="" /></a></figure>
+                            <div class="team-detail">
+                                <h4><a href="globe-alerts.html">WEBGL APP</a></h4>
+                                <span>#Use webgl</span>
+                            </div>
+-->
+                        </div>
+                    </div>
+                </div>   
+            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
+		</div>
+		</section>
+		<!-- /about -->
+		
+		<!-- spacer section:stats -->
+		<section id="parallax1" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+			<div class="container">
+            <div class="align-center pad-top40 pad-bot40">
+                <br /><br /><br /><br /><br /><br />
+            </div>
+			</div>
+		</section>
+		
+		<!-- section works -->
+		<section id="section-works" class="section appear clearfix">
+			<div class="container">
+				
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Map's tutorials</h2>
+							<p>You find here pdf tutorials, first in french version.</p>
+						</div>
+					</div>
+				</div>
+					
+                <div class="row">
+                  <nav id="filter" class="col-md-12 text-center">
+                    <ul>
+                      <li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+                      <li><a href="#"  class="btn-theme btn-small" data-filter=".mapserver" >Mapserver</a></li>
+                      <li><a href="#"  class="btn-theme btn-small" data-filter=".postgis">Postgis</a></li>
+                      <li ><a href="#" class="btn-theme btn-small" data-filter=".openlayers">Leaflet/ol3js</a></li>
+                    </ul>
+                  </nav>
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="portfolio-items isotopeWrapper clearfix" id="6">
+
+                        <article class="col-md-2 isotopeItem mapserver">
+                            <div class="portfolio-item">
+                                <a href="https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapservermiseenoeuvre.pdf">
+                                    <img src="img/tuto_mapserver_fr_ex1.jpg" alt="" />
+                                </a>
+                                <h5>Mapserver pdf, create a first mapfile. Example with docker</h5>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem mapserver">
+                            <div class="portfolio-item">
+                                <a href="https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapservergraticules.pdf">
+                                    <img src="img/tuto_mapserver_fr_ex2.jpg" alt="" />
+                                </a>
+                                <h5>Mapserver pdf, add graticules to a map. Example with docker</h5>
+                            </div>
+                        </article>
+
+
+                        <article class="col-md-2 isotopeItem mapserver">
+                            <div class="portfolio-item">
+                                <a href="https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapserverconnectionpostgis.pdf">
+                                    <img src="img/tuto_mapserver_fr_ex3.jpg" alt="" />
+                                </a>
+                                <h5>Mapserver pdf, connect to postgis. Example with docker</h5>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem mapserver">
+                            <div class="portfolio-item">
+                                <a href="https://github.com/pamtrak06/gis-howto/blob/master/fr_ateliersigcartes-mapserverWMS.pdf">
+                                    <img src="img/tuto_mapserver_fr_ex4.jpg" alt="" />
+                                </a>
+                                <h5>Mapserver pdf, produce & use wms. Example with docker</h5>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem postgis">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                                <h5>Redaction in progress... Will be soon available for your pleasure !</h5>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem postgis">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                                <h5>Redaction in progress... Will be soon available for your pleasure !</h5>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem openlayers">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem postgis">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+
+                        <article class="col-md-2 isotopeItem openlayers">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+                          
+                        <article class="col-md-2 isotopeItem openlayers">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+                          
+                        <article class="col-md-2 isotopeItem openlayers">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+                          
+                        <article class="col-md-2 isotopeItem openlayers">
+                            <div class="portfolio-item">
+                                <a href="#"><img src="img/coming_soon_3.jpg" alt="" /></a>
+                            </div>
+                        </article>
+                          
+                        </div>
+                      </div>
+                    </div>
+                </div>
+			</div>
+		</section>
+		<section id="parallax2" class="section parallax" data-stellar-background-ratio="0.5">	
+            <div class="align-center pad-top40 pad-bot40">
+<!--                <blockquote class="bigquote color-white">.</blockquote>-->
+<!--				<p class="color-white">.</p>-->
+                <br /><br /><br /><br /><br /><br />
+            </div>
+		</section>
+
+		<!-- contact -->
+<!--
+        <section id="section-contact" class="section appear clearfix">
+            <div class="container">
+            <div class="align-center pad-top40 pad-bot40">
+                <p class="color-blue"><a href="https://snazzymaps.com">Google maps snap</a></p>
+                <p class="color-blue"><a href="https://developers.route360.net/">Route 360 API</a></p>
+            </div>
+            </div>
+            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
+        </section>
+-->
+		<section id="section-contact" class="section appear clearfix">
+			<div class="container">
+				
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Contact</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="cform" id="contact-form">
+							<div id="sendmessage">
+								 Your message has been sent. Thank you!
+							</div>
+							<form action="contact/contact.php" method="post" role="form" class="contactForm">
+							  <div class="form-group">
+								<label for="name">Your Name</label>
+								<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="maxlen:4" data-msg="Please enter at least 4 chars" />
+								<div class="validation"></div>
+							  </div>
+							  <div class="form-group">
+								<label for="email">Your Email</label>
+								<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+								<div class="validation"></div>
+							  </div>
+							  <div class="form-group">
+								<label for="subject">Subject</label>
+								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
+								<div class="validation"></div>
+							  </div>
+							  <div class="form-group">
+								<label for="message">Message</label>
+								<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+								<div class="validation"></div>
+							  </div>
+							  
+							  <button type="submit" class="btn btn-theme pull-left">SEND MESSAGE</button>
+							</form>
+
+						</div>
+					</div>
+					<!-- ./span12 -->
+				</div>
+				
+			</div>
+		</section>
+		<!-- map -->
+		<section id="section-map" class="clearfix">
+			<a href="https://snazzymaps.com/"><div id="map"></div></a>
+		</section>
+		
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+                <div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
+                <div class="col-sm-12"><p>Copyright &copy; 2015 images from <a href="http://dd.meteo.gc.ca/doc/LICENCE_GENERAL.txt">Data source : Environnement Canada</a></p></div>
+                <div class="col-sm-12"><p>Copyright &copy; 2015 www, pamtrak06</p></div>
+			</div>
+		</div>
+
+	</section>
+	<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+
+	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/skrollr.min.js"></script>		
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/validate.js"></script>
+        <script src="js/main.js"></script>
+	</body>
 </html>

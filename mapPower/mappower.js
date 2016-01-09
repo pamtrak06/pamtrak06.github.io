@@ -180,7 +180,7 @@ populateMapOptionsFromCapabilities = (function(urlCapabilities){
     
     populateStylesOptions(mapLayers);
     populateTimesOptions(mapLayers);
-    populateElevationsOptions(mapLayers);
+    //populateElevationsOptions(mapLayers);
     
 });
 
@@ -303,7 +303,7 @@ updateLayerOptions = (function(){
     var mapLayers = getStore("mapLayers");
     populateStylesOptions(mapLayers);
     populateTimesOptions(mapLayers);
-    populateElevationsOptions(mapLayers);
+    //populateElevationsOptions(mapLayers);
 });
 
 
@@ -532,9 +532,8 @@ buildMapWmts = (function(mapUrl, mapDiv, tileset, time, elevation){
 //  - mapDiv : div id for the map
 //  - layer : name of the layer
 //  - time : time
-//  - elevation : elevation
 // --------------------------------------------
-buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
+buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time){
     var PROJ_ = 'EPSG:4326';
     var EXTENT_ = [-180.0, -90.0, 180.0, 90.0];
     
@@ -557,7 +556,8 @@ buildMapWms = (function(mapUrl, mapWmsDiv, layer, style, time, elevation){
     
     dataLayer = new ol.layer.Image({
         source: new ol.source.ImageWMS({
-            url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
+            //url: mapUrl + sep + 'time=' + time + '&elevation=' + elevation,
+            url: mapUrl + sep + 'time=' + time, 
             crossOrigin: null,
             attributions: [new ol.Attribution({
                 html: '&copy; ' +
@@ -642,9 +642,9 @@ buildMapWmsFromDiv = (function(){
     var layer = document.getElementById('layers').value;
     var style = document.getElementById('styles').value;
     var time = document.getElementById('times').value;
-    var elevation = document.getElementById('elevations').value;
+    //var elevation = document.getElementById('elevations').value;
     
-    return buildMapWms(mapUrl, mapDiv, layer, style, time, elevation);
+    return buildMapWms(mapUrl, mapDiv, layer, style, time);
 });
 
 // --------------------------------------------
@@ -690,7 +690,67 @@ updateService = (function(){
 init = (function(){
     document.getElementById("mapUrl").value = 'http://geo.weather.gc.ca/geomet/?lang=E';
     //populateMapOptionsFromCapabilities('WMSCapabilities.xml');
-      var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
+    var url = 'http://geo.weather.gc.ca/geomet/?lang=E&service=wms&request=GetCapabilities';
     populateMapOptionsFromCapabilities(url);
     buildMapFromDiv();
 });
+
+// --------------------------------------------
+// GOOGLE MAPS
+// --------------------------------------------
+
+// --------------------------------------------
+// Add a new marker to a google map
+// --------------------------------------------
+// Parameters
+//  - map           : google map
+//  - lat           : latitude
+//  - lon           : longitude
+//  - tooltip       : tooltip content
+//  - icon          : icon
+// --------------------------------------------
+gm_addMarker = (function(map, lat, lon, tooltip, icon){
+    var pos = new google.maps.LatLng(lat, lon);
+
+    var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon: icon,
+        size: new google.maps.Size(120, 80),
+    });
+    marker.tooltipContent = tooltipContent;
+    var infoWindow = new google.maps.InfoWindow({
+        content: tooltipContent
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.open(map, marker);
+    });
+
+    google.maps.event.addListener(marker, 'mouseover', function () {
+        var point = fromLatLngToPoint(marker.getPosition(), map);
+        $('#marker-tooltip').html(marker.tooltipContent + '<br>Pixel coordinates: ' + point.x + ', ' + point.y).css({
+            'left': point.x,
+                'top': point.y
+        }).show();
+    });
+
+    google.maps.event.addListener(marker, 'mouseout', function () {
+        $('#marker-tooltip').hide();
+    });
+});
+
+// --------------------------------------------
+// Add a new point to a google map
+// --------------------------------------------
+// Parameters
+//  - latLng        : latitude/longitude
+//  - map           : google map
+// --------------------------------------------
+//gm_fromLatLngToPoint = (function(latLng, map){
+//    var topRight = map.getProjection().fromLatLngToPoint(map.getBounds().getNorthEast());
+//    var bottomLeft = map.getProjection().fromLatLngToPoint(map.getBounds().getSouthWest());
+//    var scale = Math.pow(2, map.getZoom());
+//    var worldPoint = map.getProjection().fromLatLngToPoint(latLng);
+//    return new google.maps.Point((worldPoint.x - bottomLeft.x) * scale, (worldPoint.y - topRight.y) * scale);
+//}
