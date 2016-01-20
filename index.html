@@ -382,6 +382,7 @@
                       <li><a href="#"  class="btn-theme btn-small" data-filter=".formats">Maps formats</a></li>
                       <li><a href="#"  class="btn-theme btn-small" data-filter=".libraries">Maps libraries</a></li>
                       <li><a href="#"  class="btn-theme btn-small" data-filter=".articles">Articles</a></li>
+                      <li><a href="#"  class="btn-theme btn-small" data-filter=".web_frameworks">Web frameworks</a></li>
                     </ul>
                   </nav>
                   <div class="col-md-12">
@@ -568,6 +569,15 @@
                             </div>
                         </article>
                           
+                        <article class="col-md-2 isotopeItem web_frameworks">
+                            <div class="portfolio-item">
+                                <a target="_blank" href="https://www.staticgen.com/">
+                                    <img style="max-height: 50px; width: auto;" src="img/logo_article.png" alt="" />
+                                </a>
+                                <h5>StaticGen: Top Open-Source Static Site Generators</h5>
+                            </div>
+                        </article>
+                          
                         </div>
                       </div>
                     </div>
@@ -640,7 +650,14 @@
 		<!--section id="section-map" class="clearfix">
 			<a href="https://snazzymaps.com/"><div id="map"></div></a>
 		</section-->
-		
+    <section id="section-france" class="clearfix">
+        <div id="my-div"></div>
+
+        <script>
+          new Vivus('my-div', {duration: 200, file: 'img/france2016Low.svg'}, myCallback);
+        </script>
+    </section>
+
 	<section id="footer" class="section footer">
 		<div class="container">
 			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
@@ -679,5 +696,6 @@
 	<script src="js/jquery.appear.js"></script>
 	<script src="js/validate.js"></script>
     <script src="js/main.js"></script>
+    <script src="vivus/vivus.js"></script>
 	</body>
 </html>
