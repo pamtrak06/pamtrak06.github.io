@@ -176,10 +176,9 @@ populateMapOptionsFromCapabilities = (function(urlCapabilities){
     loadCapabilitiesCrossOrigin(urlCapabilities);
     var mapLayers = getStore("mapLayers");
     
-    populateLayersOptions(mapLayers);
-    
-    populateStylesOptions(mapLayers);
-    populateTimesOptions(mapLayers);
+    setTimeout(populateLayersOptions(mapLayers), 100);
+    setTimeout(populateStylesOptions(mapLayers), 100);
+    setTimeout(populateTimesOptions(mapLayers), 100);
     //populateElevationsOptions(mapLayers);
     
 });
