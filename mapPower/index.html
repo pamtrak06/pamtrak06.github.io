@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+        <meta name="description" content="Openlayers 3 map with access to wms services and sources from Environnemnt Canada">
 
         <link rel="stylesheet" href="layout.css" type="text/css">
         
@@ -15,11 +16,28 @@
         
         <!-- OPENLAYERS3 -->
         <link rel="stylesheet" href="../ol.css" type="text/css">
+        
         <style>
             .map {
                 height: 400px;
                 width: 1200px;
             }
+            
+            .wrapper {
+              position: relative;
+            }
+            
+/*
+            #progress {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 20px;
+              background: rgba(0, 60, 136, 0.4);
+              width: 0;
+              transition: width 250ms;
+            }
+*/
             
             #form div.submit {
                 padding-bottom: 0;
@@ -68,8 +86,8 @@
         <link rel="stylesheet" href="../css_button_class.css">
         
         <script src="mappower.js"></script>
-
         <title>Web Map viewer</title>
+        <noscript>Your media does not support JavaScript!</noscript>
     </head>
     <body onload="init();">
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -86,8 +104,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <div id="map" class="map">
-                    </div>
+                    <div id="map" class="map"></div>
                 </div>
             </div>
             <div class="row-fluid">
