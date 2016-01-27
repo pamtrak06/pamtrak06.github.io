@@ -243,9 +243,9 @@ populateMapOptionsFromCapabilities = (function(urlCapabilities){
     loadCapabilitiesCrossOrigin(urlCapabilities);
     var mapLayers = getStore("mapLayers");
     
-    setTimeout(populateLayersOptions(mapLayers), 100);
-    setTimeout(populateStylesOptions(mapLayers), 100);
-    setTimeout(populateTimesOptions(mapLayers), 100);
+    setTimeout(populateLayersOptions(mapLayers), 200);
+    setTimeout(populateStylesOptions(mapLayers), 200);
+    setTimeout(populateTimesOptions(mapLayers), 200);
     //populateElevationsOptions(mapLayers);
     
 });
