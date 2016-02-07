@@ -367,8 +367,8 @@ populateElevationsOptions = (function(mapLayers){
 // --------------------------------------------
 updateLayerOptions = (function(){
     var mapLayers = getStore("mapLayers");
-    populateStylesOptions(mapLayers);
-    populateTimesOptions(mapLayers);
+    setTimeout(populateStylesOptions(mapLayers), 200);
+    setTimeout(populateTimesOptions(mapLayers), 200);
     //populateElevationsOptions(mapLayers);
 });
 
