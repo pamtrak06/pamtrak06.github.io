@@ -736,6 +736,26 @@ var map = L.map("map", {
     zoom: 1,
     crs: L.CRS.EPSG4326
 });
+L.tileLayer( "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>",
+    subdomains: ["a","b","c"]
+}).addTo(map);
+
+// --------------------------------------------
+// Reset map
+// --------------------------------------------
+resetMap = (function() {
+  map.remove();
+  map = L.map("map", {
+      center: [0, 0],
+      zoom: 1,
+      crs: L.CRS.EPSG4326
+  });
+  L.tileLayer( "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>",
+      subdomains: ["a","b","c"]
+  }).addTo(map);
+});
 
 // --------------------------------------------
 // Load a layer in the map
@@ -753,6 +773,7 @@ loadWmsMap = (function(url, layer, style, time, reftime, format, bounds) {
       zoom: 1,
       crs: L.CRS.EPSG4326
   });
+
   // TODO to be corrected
   // create an orange rectangle
   // L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);

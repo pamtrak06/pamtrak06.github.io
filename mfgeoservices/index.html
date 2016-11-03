@@ -84,7 +84,7 @@
             <table>
               <thead>
                 <tr>
-                  <th colspan="3">Meteo-France geoservices properties</th>
+                  <th colspan="3">Meteo-France WMS geoservices parameters</th>
                 </tr>
                 <tr>
                   <th>Properties</th>
@@ -192,6 +192,7 @@
                   <td>Load map</td>
                   <td>
                     <!--button class="btn btn-lg btn-primary btn-block" id="loadMap" type="submit">Load WMS Map layer</button-->
+                    <button type="button" id="clearCache" class="btn btn-warning">Clear session storage cache</button>
                     <button type="button" id="loadMap" class="btn btn-primary">Load WMS Map layer</button>
                   </td>
                 </tr>
@@ -284,6 +285,8 @@
         // Fire-event: select WMS geoservice
         $("#geoservices").on("change", function () {
 
+            resetMap();
+
             clearLayersOptions();
             clearStylesOptions();
             clearReferenceTimesOptions();
@@ -362,6 +365,14 @@
         // $("#token").on("change",function () {
         //     token = $("#token").val();
         // });
+
+        // Fire-event: clear cache
+        $("#clearCache").click(function () {
+          sessionStorage.clear();
+          init();
+          $("#geoservices").change();
+          resetMap();
+        });
 
         // Fire-event: load map
         $("#loadMap").click(function () {
