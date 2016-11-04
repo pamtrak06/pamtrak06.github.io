@@ -14,13 +14,15 @@
            "service_type" : "WMS",
            "url_base" : "https://geoservices.meteofrance.fr/services/MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS?",
            "site" : "https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=201&id_rubrique=42",
-           "geojson" : "geojson/world.topojson",
+           "geojson" : "geojson/world.geojson.ref",
            "standard" : "OGC",
            "norm" : "INSPIRE",
            "mention" : "Informations créées à partir de données de Météo-France",
            "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude)."
+           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude).",
+           "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
+
         }
       },
 
@@ -45,7 +47,8 @@
            "mention" : "Informations créées à partir de données de Météo-France",
            "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude)."
+           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude).",
+           "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
         }
       },
 
@@ -70,7 +73,8 @@
            "mention" : "Informations créées à partir de données de Météo-France",
            "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude)."
+           "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude).",
+           "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
         }
       },
 
@@ -95,7 +99,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,025° (env. 2,5 km)."
+            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,025° (env. 2,5 km).",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -120,7 +125,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,01° (env 1,3km)."
+            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,01° (env 1,3km).",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -145,7 +151,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,01° (env 1,3km)."
+            "description" : "Modèle opérationnel Arome. Champs d'analyse et de prévisions en points de grilles, issus du modèle atmosphérique Arome sur la métropole. Paramètres, niveaux, échéances et domaines paramétrables selon diverses résolutions et échéances jusqu'à H+36h ou 42h. Format : GRIB V2  - Résolution : 0,01° (env 1,3km).",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -171,7 +178,8 @@
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
             "description" : "Données d'observations issues des messages internationaux d’observation en surface (SYNOP) circulant sur le système mondial de télécommunication (SMT) de l’Organisation Météorologique Mondiale (OMM). Paramètres atmosphériques mesurés (température, humidité, direction et force du vent, pression atmosphérique, hauteur de précipitations) ou observés (temps sensible, description des nuages, visibilité) depuis la surface terrestre. Selon instrumentation et spécificités locales, d'autres paramètres peuvent être disponibles (hauteur de neige, état du sol, etc.) Métropole et outre-mer - Fréquence : 3 h - Format : ASCII",
-            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json"
+            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -197,7 +205,8 @@
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
             "description" : "Données d'observations issues des messages internationaux d’observation en surface (SYNOP) circulant sur le système mondial de télécommunication (SMT) de l’Organisation Météorologique Mondiale (OMM). Paramètres atmosphériques mesurés (température, humidité, direction et force du vent, pression atmosphérique, hauteur de précipitations) ou observés (temps sensible, description des nuages, visibilité) depuis la surface terrestre. Selon instrumentation et spécificités locales, d'autres paramètres peuvent être disponibles (hauteur de neige, état du sol, etc.) Métropole et outre-mer - Fréquence : 3 h - Format : ASCII",
-            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json"
+            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -223,7 +232,8 @@
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
             "description" : "Données d'observations issues des messages internationaux d’observation en surface (SYNOP) circulant sur le système mondial de télécommunication (SMT) de l’Organisation Météorologique Mondiale (OMM). Paramètres atmosphériques mesurés (température, humidité, direction et force du vent, pression atmosphérique, hauteur de précipitations) ou observés (temps sensible, description des nuages, visibilité) depuis la surface terrestre. Selon instrumentation et spécificités locales, d'autres paramètres peuvent être disponibles (hauteur de neige, état du sol, etc.) Métropole et outre-mer - Fréquence : 3 h - Format : ASCII",
-            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json"
+            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -249,7 +259,8 @@
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
             "description" : "Données d'observations issues des messages internationaux d’observation en surface (SYNOP) circulant sur le système mondial de télécommunication (SMT) de l’Organisation Météorologique Mondiale (OMM). Paramètres atmosphériques mesurés (température, humidité, direction et force du vent, pression atmosphérique, hauteur de précipitations) ou observés (temps sensible, description des nuages, visibilité) depuis la surface terrestre. Selon instrumentation et spécificités locales, d'autres paramètres peuvent être disponibles (hauteur de neige, état du sol, etc.) Métropole et outre-mer - Fréquence : 3 h - Format : ASCII",
-            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json"
+            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -275,7 +286,8 @@
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
             "description" : "Données d'observations issues des messages internationaux d’observation en surface (SYNOP) circulant sur le système mondial de télécommunication (SMT) de l’Organisation Météorologique Mondiale (OMM). Paramètres atmosphériques mesurés (température, humidité, direction et force du vent, pression atmosphérique, hauteur de précipitations) ou observés (temps sensible, description des nuages, visibilité) depuis la surface terrestre. Selon instrumentation et spécificités locales, d'autres paramètres peuvent être disponibles (hauteur de neige, état du sol, etc.) Métropole et outre-mer - Fréquence : 3 h - Format : ASCII",
-            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json"
+            "stations" : "https://donneespubliques.meteofrance.fr/donnees_libres/Txt/Synop/postesSynop.json",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -301,7 +313,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS."
+            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS.",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -326,7 +339,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS."
+            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS.",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -351,7 +365,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS."
+            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS.",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -376,7 +391,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS."
+            "description" : "Profils verticaux de température, vent, humidité, obtenus à partir de sondage par ballon, entre le sol et l'altitude d'éclatement du ballon (20 à 30 km). Ces mesures sont effectuées quotidiennement par les stations de radiosondages en métropole et Outre-mer. Métropole et Outre-mer   - Fréquence : 1 à 2 fois par jour (O0h et 12h UTC)   - Format : WMS.",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -401,7 +417,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS"
+            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -426,7 +443,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS"
+            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -451,7 +469,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS"
+            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -476,7 +495,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS"
+            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -501,7 +521,8 @@
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
-            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS"
+            "description" : "Cartographique des données climatologiques mensuelles du réseau climatologique régional de base de l'Organisation Météorologique Mondiale (OMM). Metropole - disponibles depuis janvier 1990 - fréquence mensuelle - Format WMS",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -525,7 +546,8 @@
             "site" : "",
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
-            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14"
+            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -549,7 +571,8 @@
             "site" : "",
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
-            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14"
+            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -573,7 +596,8 @@
             "site" : "",
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
-            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14"
+            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -597,7 +621,8 @@
             "site" : "",
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
-            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14"
+            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        },
 
@@ -621,7 +646,8 @@
             "site" : "",
             "mention" : "Informations créées à partir de données de Météo-France",
             "license" : "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
-            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14"
+            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
+            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
           }
        }
 

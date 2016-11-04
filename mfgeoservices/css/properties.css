@@ -78,6 +78,11 @@ td:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 .form-signin combobox[type="parameter"] {
   position: relative;
   height: auto;
