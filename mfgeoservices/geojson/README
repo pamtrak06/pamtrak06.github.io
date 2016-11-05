@@ -1,5 +1,5 @@
 FRANCE + DOMTOM
-wget from https://github.com/etalab/adresse.data.gouv.fr/tree/master/adresse/static
+https://github.com/etalab/adresse.data.gouv.fr/tree/master/adresse/static
 
 WORLD
 https://github.com/johan/world.geo.json
@@ -7,3 +7,4 @@ https://github.com/johan/world.geo.json
 EUROPE
 http://code.highcharts.com/mapdata/1.0.0/
 http://code.highcharts.com/mapdata/1.0.0/custom/europe.geo.json
+http://data.okfn.org/data/core/geo-nuts-administrative-boundaries

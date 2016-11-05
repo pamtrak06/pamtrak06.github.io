@@ -117,6 +117,7 @@ getStoreJSon = (function(key) {
 //  - urlCapabilities : url of the apabilities
 // --------------------------------------------
 loadCapabilitiesCrossOrigin = (function(urlCapabilities, key) {
+
     var parser = new ol.parser.ogc.WMSCapabilities(),
         xmlDoc, layers;
     var mapLayers = {};
@@ -127,6 +128,7 @@ loadCapabilitiesCrossOrigin = (function(urlCapabilities, key) {
         url: urlCapabilities,
         dataType: "xml",
         success: function(data) {
+
                 //console.log(data);
                 var xmlDoc = parser.read(data);
                 document.getElementById("capabilities").innerHTML = xmlDoc;
@@ -187,11 +189,10 @@ loadCapabilitiesCrossOrigin = (function(urlCapabilities, key) {
 // Get api token from meteo-france
 // --------------------------------------------
 getToken = (function(username, password) {
-    var apikeyurl = "https://donneespubliques.meteofrance.fr/inspire/services/GetAPIKey?" + username + "&password=" + password;
+    var apikeyurl = "https://donneespubliques.meteofrance.fr/inspire/services/GetAPIKey?username=" + username + "&password=" + password;
     $.ajax({
         type: "POST",
         url: apikeyurl,
-        //url: "http://whateverorigin.org/get?url=" + encodeURIComponent(apikeyurl) + "&callback=?",
         //crossDomain: true,
         dataType: "xml",
         success: function(xml) {
@@ -272,7 +273,8 @@ getGeojsonCoordinates = (function(serviceName) {
     var geojson = getStore("geojson");
     $.each(geojson.features, function(index, value) {
         if (serviceName === value.properties.url_base) {
-            found = value.geometry.coordinates;
+            var latlon = value.geometry.coordinates;
+            found = "[" + "[" + latlon[0][0] + "," + latlon[0][1] + "]" + "," + "[" + latlon[1][0] + "," + latlon[1][1] + "]" + "]";
             return found;
         }
     });
@@ -660,8 +662,7 @@ populateBoundingBoxOptions = (function(mapLayers) {
             bbSel.removeChild(bbSel.firstChild);
         }
 
-        var latlon = "[" + "[" + bbTab[3] + ".0," + bbTab[0] + ".0]" + "," + "[" + bbTab[1] + ".0," + bbTab[2] + ".0]" + "]";
-        //var latlon = "[" + "[" + bbTab[0] + ".0," + bbTab[1] + ".0]" + "," + "[" + bbTab[2] + ".0," + bbTab[3] + ".0]" + "]";
+        var latlon = "[" + "[" + bbTab[3] + "," + bbTab[0] + "]" + "," + "[" + bbTab[1] + "," + bbTab[2] + "]" + "]";
         var opt = document.createElement("option");
         opt.value = latlon;
         opt.innerHTML = latlon;
@@ -708,12 +709,13 @@ populateStylesOptions = (function(mapLayers) {
 });
 
 // --------------------------------------------
-// Load legend graphics image
+// Get legend graphics image url
 // --------------------------------------------
 // Parameters
 //  - mapLayers : list of layers
 // --------------------------------------------
-loadLegendGraphicImage = (function(mapLayers) {
+getLegendGraphicImage = (function(mapLayers) {
+    var legendImage;
     var layerName = $("#layers").val();
     if (layerName || !(0 === layerName.length)) {
         var layer = mapLayers[layerName];
@@ -721,15 +723,12 @@ loadLegendGraphicImage = (function(mapLayers) {
         for (var t = 0; t < styleTab.length; ++t) {
             var value = styleTab[t];
             if (value.name === $("#styles").val()) {
-              var legendImage = value.legend.href;
-              $('#legend img').attr("src",legendImage);
-              $('<img src="'+ legendImage +'">').load(function() {
-                //$(this).width(some).height(some).appendTo('#some_target');
-                $(this).appendTo('#legend');
-              });
+              legendImage = value.legend.href;
+              return legendImage;
             }
         }
       }
+      return legendImage;
   });
 
 // --------------------------------------------
@@ -739,7 +738,6 @@ loadLegendGraphicImage = (function(mapLayers) {
 //  - urlCapabilities : url of the capabilities
 // --------------------------------------------
 populateMapOptionsFromCapabilities = (function(urlCapabilities, geoserviceName) {
-
     // If key exist use stored session
     var keyService = getStore(geoserviceName);
     if (keyService) {
@@ -759,6 +757,9 @@ var map;
 // Initialize leaflet Map
 // --------------------------------------------
 initWMSMap = (function() {
+  if (undefined != map) {
+    map.remove();
+  }
   map = L.map("map", {
       center: [0, 0],
       zoom: 2,
@@ -774,7 +775,6 @@ initWMSMap = (function() {
 // Reset map
 // --------------------------------------------
 resetWMSMap = (function() {
-    map.remove();
     initWMSMap();
 });
 
@@ -787,7 +787,7 @@ resetWMSMap = (function() {
 //  - style : style of wms layer
 //  - bounds : bounding box
 // --------------------------------------------
-loadWmsMap = (function(url, layer, style, time, reftime, format, bounds) {
+loadWmsMap = (function(url, layer, style, time, reftime, format, bounds, uri) {
     map.remove();
     map = L.map("map", {
         center: [0, 0],
@@ -827,18 +827,31 @@ loadWmsMap = (function(url, layer, style, time, reftime, format, bounds) {
         }
     }).addTo(map);
 
-    // create an orange rectangle
-    try {
-      var bb = JSON.parse(bounds);
-      L.rectangle(JSON.parse(bounds), {color: "#ff7800", weight: 1}).addTo(map);
-      if (bounds) {
-        map.fitBounds(JSON.parse(bounds));
-      }
-    } catch(err) {
-      console.error("layer: "+layer+", error caught on bounding box: " + bounds);
-      map.fitBounds([[53.0,-12.0],[38.0,8.0]]);
-    }
+    // Add legend
+    L.wmsLegend(uri);
 
+    //fitBounds(bounds, layer);
+
+});
+
+// --------------------------------------------
+// Adjust map to bounds
+// --------------------------------------------
+// Parameters
+//  - bounds : string bounding box
+// --------------------------------------------
+fitBounds = (function(bounds, layer) {
+  try {
+    var bb = JSON.parse(bounds);
+    // create an orange rectangle
+    L.rectangle(JSON.parse(bounds), {color: "#ff7800", weight: 1}).addTo(map);
+    if (bounds) {
+      map.fitBounds(JSON.parse(bounds));
+    }
+  } catch(err) {
+    console.error("layer: "+layer+", error caught on bounding box: " + bounds);
+    map.fitBounds([[90.0,-180.0],[-90.0,180.0]]);
+  }
 });
 
 // --------------------------------------------
@@ -847,17 +860,11 @@ loadWmsMap = (function(url, layer, style, time, reftime, format, bounds) {
 // Parameters
 //  - geojsonFeature : geojson data
 // --------------------------------------------
-// TODO: bug with addnig geojson after
-// --------------------------------------------
 addGeojsonToMap = (function(key) {
-  //key = geojsonFile.split("\\").pop().split("/").pop()
-  // TODO: bug with session storage
   var geojsonFeature = getStore(key);
-  //var geojsonFeature = loadGeojson(geojsonFile, key);
-  // TODO: bug loading geojson, topojson
   L.geoJSON(geojsonFeature, { // no need to use "new" with "L.geoJson", which does a "new L.GeoJSON" (note the case difference).
     style: {
-    	opacity: 0.5 // Just to see it better
+    	opacity: 0.5
     },
     onEachFeature: function (feature, layer) {
     	layer.options.zIndex = feature.id + 20;

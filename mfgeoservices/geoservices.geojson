@@ -5,7 +5,7 @@
       { "type": "Feature",
         "geometry": {
            "type": "Polygon",
-           "coordinates": [ [ [ -180.0, -85.609038 ], [ -180.0, 83.64513 ], [ 180.0, 83.64513 ], [ 180.0, -85.609038 ], [ -180.0, -85.609038 ] ] ]
+           "coordinates": [[90.0,-180.0],[-90.0,180.0]]
         },
         "properties": {
            "name": "MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS",
@@ -14,7 +14,7 @@
            "service_type" : "WMS",
            "url_base" : "https://geoservices.meteofrance.fr/services/MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS?",
            "site" : "https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=201&id_rubrique=42",
-           "geojson" : "geojson/world.geojson.ref",
+           "geojson" : "geojson/world.geojson",
            "standard" : "OGC",
            "norm" : "INSPIRE",
            "mention" : "Informations créées à partir de données de Météo-France",
@@ -22,17 +22,13 @@
            "documentation" : "https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14",
            "description" : "Champs d'analyse et de prévision en points de grille issus du modèle de prévision atmosphérique français Arpège sur une grille globale à résolution 2°5. Les données sont réactualisées deux fois par jour, et disponibles jusqu'à 4 jours d’échéance de prévision, par pas de 24 h, au niveau de la mer, 850 et 500 hectopascals (environ 1500 et 5500 mètres d'altitude).",
            "token" : "https://geoservices.meteofrance.fr/services/GetAPIKey?username={username}&password={password}"
-
         }
       },
 
       { "type": "Feature",
         "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-           [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-             [100.0, 1.0], [100.0, 0.0] ]
-           ]
+           "type": "Polygon",
+           "coordinates": [[72.0,-32.0],[20.0,42.0]]
         },
         "properties": {
            "name": "MF-NWP-GLOBAL-ARPEGE-01-EUROPE-WMS",
@@ -41,7 +37,7 @@
            "service_type" : "WMS",
            "url_base" : "https://geoservices.meteofrance.fr/services/MF-NWP-GLOBAL-ARPEGE-01-EUROPE-WMS?",
            "site" : "https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=201&id_rubrique=42",
-           "geojson" : "geojson/europe.geojson",
+           "geojson" : "geojson/nuts_rg_60m_2010_lvl_1.geojson",
            "standard" : "OGC",
            "norm" : "INSPIRE",
            "mention" : "Informations créées à partir de données de Météo-France",
@@ -54,11 +50,8 @@
 
       { "type": "Feature",
         "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-           [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-             [100.0, 1.0], [100.0, 0.0] ]
-           ]
+           "type": "Polygon",
+           "coordinates": [[72.0,-32.0],[20.0,42.0]]
         },
         "properties": {
            "name": "MF-NWP-GLOBAL-ARPEGE-01-EUROPE-WCS",
@@ -67,7 +60,7 @@
            "service_type" : "WCS",
            "url_base" : "https://geoservices.meteofrance.fr/services/MF-NWP-GLOBAL-ARPEGE-01-EUROPE-WCS?",
            "site" : "https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=201&id_rubrique=42",
-           "geojson" : "geojson/europe.geojson",
+           "geojson" : "geojson/nuts_rg_60m_2010_lvl_1.geojson",
            "standard" : "OGC",
            "norm" : "INSPIRE",
            "mention" : "Informations créées à partir de données de Météo-France",
@@ -79,13 +72,10 @@
       },
 
       { "type": "Feature",
-          "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[53.0,-12.0],[38.0,8.0]]
+        },
           "properties": {
             "name": "MF-NWP-HIGHRES-AROME-0025-FRANCE-WMS",
             "service" : "Prévision Numérique Modèle AROME Français Résolution 0°025",
@@ -105,14 +95,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
-          "properties": {
+         "geometry": {
+            "type": "Polygon",
+            "coordinates": [[55.4,-16.0],[37.5,12.0]]
+         },
+         "properties": {
             "name": "MF-NWP-HIGHRES-AROME-001-FRANCE-WMS",
             "service" : "Prévision Numérique Modèle AROME Français Résolution 0°01",
             "extend" : "France",
@@ -131,14 +118,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[55.4,-16.0],[37.5,12.0]]
+         },
+         "properties": {
             "name": "MF-NWP-HIGHRES-AROME-001-FRANCE-WCS",
             "service" : "Prévision Numérique Modèle AROME Français Résolution 0°01",
             "extend" : "France",
@@ -157,14 +141,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[52.0,-5.0],[41.0,10.0]]
+         },
+         "properties": {
             "name": "ObsSurfWMORes40EssMetroWMS",
             "service" : "Observations en surface (issues des messages SYNOP) / France Métropolitaine",
             "extend" : "France Métropolitaine",
@@ -184,14 +165,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ObsSurfWMORes40EssMartiniqueWMS",
             "service" : "Observations en surface (issues des messages SYNOP) / Martinique",
             "extend" : "Martinique",
@@ -211,14 +189,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-             [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-               [100.0, 1.0], [100.0, 0.0] ]
-             ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ObsSurfWMORes40EssGuadeloupeWMS",
             "service" : "Observations en surface (issues des messages SYNOP) / Guadeloupe",
             "extend" : "Guadeloupe",
@@ -238,14 +213,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[6.0,-55.0],[3.0,-51.0]]
+         },
+         "properties": {
             "name": "ObsSurfWMORes40EssGuyaneWMS",
             "service" : "Observations en surface (issues des messages SYNOP) / Guyane",
             "extend" : "Guyane",
@@ -265,14 +237,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ObsSurfWMORes40EssReunionWMS",
             "service" : "Observations en surface (issues des messages SYNOP) / Réunion",
             "extend" : "Réunion",
@@ -293,14 +262,11 @@
 
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[53.4,-16.0],[37.5,12.0]]
+         },
+         "properties": {
             "name": "ObsAltiWMORes40EssMetroWMS",
             "service" : "Observations en Altitude (Issues des messages TEMP) / France Métropolitaine",
             "extend" : "France Métropolitaine",
@@ -319,14 +285,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+            "type": "Polygon",
+            "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ObsAltiWMORes40EssGuadeloupeWMS",
             "service" : "Observations en Altitude (Issues des messages TEMP) / Guadeloupe",
             "extend" : "Guadeloupe",
@@ -345,14 +308,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[6.0,-55.0],[3.0,-51.0]]
+         },
+         "properties": {
             "name": "ObsAltiWMORes40EssGuyaneWMS",
             "service" : "Observations en Altitude (Issues des messages TEMP) / Guyane",
             "extend" : "Guyane",
@@ -371,14 +331,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ObsAltiWMORes40EssReunionWMS",
             "service" : "Observations en Altitude (Issues des messages TEMP) / Réunion",
             "extend" : "Réunion",
@@ -397,14 +354,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[53.4,-16.0],[37.5,12.0]]
+         },
+        "properties": {
             "name": "ClimMensWMORes40EssMetroWMS",
             "service" : "Climatologie Mensuelle / France Métropolitaine",
             "extend" : "France Métropolitaine",
@@ -423,14 +377,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+            "type": "Polygon",
+            "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimMensWMORes40EssMartiniqueWMS",
             "service" : "Climatologie Mensuelle / Martinique",
             "extend" : "Martinique",
@@ -449,14 +400,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimMensWMORes40EssGuadeloupeWMS",
             "service" : "Climatologie Mensuelle / Guadeloupe",
             "extend" : "Guadeloupe",
@@ -475,14 +423,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[6.0,-55.0],[3.0,-51.0]]
+         },
+         "properties": {
             "name": "ClimMensWMORes40EssGuyaneWMS",
             "service" : "Climatologie Mensuelle / Guyane",
             "extend" : "Guyane",
@@ -501,14 +446,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimMensWMORes40EssGuyaneWMS",
             "service" : "Climatologie Mensuelle / Réunion",
             "extend" : "Réunion",
@@ -527,14 +469,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[53.4,-16.0],[37.5,12.0]]
+         },
+         "properties": {
             "name": "ClimNormalesWMORes40EssMetroWMS",
             "service" : "Normales climatologiques / France Métropolitaine",
             "extend" : "France Métropolitaine",
@@ -552,14 +491,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimNormalesWMORes40EssMartiniqueWMS",
             "service" : "Normales climatologiques / Martinique",
             "extend" : "Martinique",
@@ -577,14 +513,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimNormalesWMORes40EssGuadeloupeWMS",
             "service" : "Normales climatologiques / Guadeloupe",
             "extend" : "Guadeloupe",
@@ -602,14 +535,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[6.0,-55.0],[3.0,-51.0]]
+         },
+         "properties": {
             "name": "ClimNormalesWMORes40EssGuyaneWMS",
             "service" : "Normales climatologiques / Guyane",
             "extend" : "Guyane",
@@ -627,14 +557,11 @@
        },
 
        { "type": "Feature",
-       "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-              [100.0, 1.0], [100.0, 0.0] ]
-            ]
-          },
-          "properties": {
+         "geometry": {
+           "type": "Polygon",
+           "coordinates": [[17.0,-62.0],[16.0,-61.0]]
+         },
+         "properties": {
             "name": "ClimNormalesWMORes40EssReunionWMS",
             "service" : "Normales climatologiques / Réunion",
             "extend" : "Réunion",
