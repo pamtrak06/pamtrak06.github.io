@@ -90,3 +90,22 @@ td:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+#map3d{
+    background:blue;
+    height:100px;
+    width:500px;
+    position:relative;
+    left:-520px;
+}
+.open{
+    left:0px !important;
+}
+.transition{
+
+  -webkit-transition: left 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: left 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: left 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: left 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+}

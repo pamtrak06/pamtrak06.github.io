@@ -10,7 +10,9 @@
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <!--script src="js/jquery.mobile-1.4.5.min.js"></script-->
-        <!-- JQUERY -->
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
 
         <!-- BOOTSTRAP -->
         <!-- Latest compiled and minified CSS -->
@@ -19,17 +21,17 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp">
         <!-- Latest compiled and minified JavaScript -->
         <script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
+        <!-- bootstrap switch -->
+        <link href="css/docs/highlight.css" rel="stylesheet">
+        <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+        <link href="css/docs/docs.min.css" rel="stylesheet">
+        <link href="css/docs/main.css" rel="stylesheet">
 
-        <!-- BOOTSTRAP -->
-
-        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="css/properties.css">
+        <!-- OPENLAYERS3 -->
+        <link rel="stylesheet" href="css/ol.css">
 
         <!-- LEAFLET -->
         <link rel="stylesheet" href="css/leaflet.css" />
-        <script src="js/leaflet.js"></script>
-
         <style>
       		#map {
       			width: 1000px;
@@ -50,16 +52,29 @@
       			margin-top:15px;
       		}
       	</style>
-        <!-- LEAFLET -->
 
         <!-- leaflet plugin -->
         <link rel="stylesheet" href="css/leaflet.wmslegend.css"/>
-        <!-- leaflet plugin -->
 
+        <!-- CESIUM -->
+        <style>
+            @import url(css/Widgets/widgets.css);
+              #cesiumContainer, .cesium-viewer,
+              .cesium-viewer-cesiumWidgetContainer, .cesium-widget,
+              .cesium-widget canvas {
+                  width: 1000px;
+                  height: 100%;
+                  margin: 0;
+                  padding: 0;
+                  overflow: hidden;
+              }
+                /*width: 1000px; height: 500px; margin: 50px; padding: 0; overflow: hidden;
+                width: 100%; height: 100%; margin: 50px; padding: 60px; overflow: hidden;*/
+            }
+        </style>
 
-        <!-- OPENLAYERS3 -->
-        <script src="../ol.js" type="text/javascript"></script>
-        <!-- OPENLAYERS3 -->
+        <!-- SPECIFIC PROJECT -->
+        <link rel="stylesheet" href="geoservices.css">
 
         <title>Web Map viewer</title>
         <!--noscript>Your media does not support JavaScript!</noscript-->
@@ -72,6 +87,10 @@
         <div class="col-xs-6">
 
           <div id="map"></div>
+          <div id="map3D" class="transition"></div>
+
+          <h2 class="h4">Switch 2D/3D</h2>
+          <input id="switch3D" type="checkbox" class="switch" checked>
 
           <i class="fa fa-hdd-o" aria-hidden="true">>>>This site use <a target="blank" href="https://en.wikipedia.org/wiki/Web_storage">web storage (session)</a> to allow better performance.<br/>
             If you want to reset it click on <a href="#" id="linkClearCache">"Clear session sorage cache"</a> button to reinitialize capabilities requests.</i>
@@ -233,11 +252,53 @@
         <div style="visibility: hidden;" id="geojsonShoreline" name="geojsonShoreline"></div>
       </div>
 
+      <!-- BOOTSTRAP -->
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
+      <!-- bootstrap switch -->
+      <script src="js/docs/highlight.js"></script>
+      <script src="js/bootstrap-switch.min.js"></script>
+      <script src="js/docs/main.js"></script>
+
+      <!-- OPENLAYERS3 -->
+      <script src="js/ol.js" type="text/javascript"></script>
+
+      <!-- CESIUM -->
+      <script src="js/Cesium.js"></script>
+
+      <!-- LEAFLET -->
+      <script src="js/leaflet.js"></script>
+
+      <!-- leaflet plugin -->
+      <script src="js/leaflet.wmslegend.js"></script>
+
+      <!-- Meteo-France geoservices -->
+      <script src="geoservices.js"></script>
+      <script src="geomaps.js"></script>
+
+      <!--script src="js/jquery.progresstimer.js" />
+      <script>
+          var progress = $(".loading-progress").progressTimer({
+              timeLimit: 60,
+              onFinish: function () {
+                  alert("completed!");
+              }
+          });
+      </script-->
+
       <script crossorigin="anonymous">
         // --------------------------------------------
         // Initialisation
         // --------------------------------------------
         init=(function() {
+
+          // Initialize Bootstrap Switch.
+          //$("[name='switch3D']").bootstrapSwitch();
+          $("input.switch").bootstrapSwitch({
+            onText: '3D',
+            offText: '2D',
+            size: 'large'
+          });
 
           // initWMSMap map
           initWMSMap();
@@ -399,22 +460,14 @@
             var token = $("#token").val();
             var url = $("#geoservices").val() + "token=" + token;
             var legend = getLegendGraphicImage(getStore("mapLayers"));
+
             loadWmsMap(url, layer, style, time, reftime, format, bbox, legend);
+            // change shoreline for new layer loaded
             $("#geojsonShoreline").trigger("change");
-            //var mapLayers = getStore("mapLayers");
 
-            // TODO: bug with addnig geojson after
-            // var geojsonFile = getGeojsonRessource(geoserviceSelected)
-            // key = geojsonFile.split("\\").pop().split("/").pop()
-            // var geojsonFeature = loadGeojsonShoreline(geojsonFile, key);
-            // loadWmsMap(url, layer, style, boundingbox, geojsonFeature);
-
-            // TODO: bug with addnig geojson after
-            //addGeojsonToMap(getGeojsonRessource(geoserviceSelected));
           }
         });
 
-        // TODO bug
         // Fire-event: loading geojson shoreline
         $("#geojsonShoreline").on("change", function () {
             var geoserviceSelected = $("#geoservices option:selected").val();
@@ -424,25 +477,21 @@
             fitBounds(getGeojsonCoordinates(geoserviceSelected), $("#layers").val());
         });
 
-      </script>
-
-      <!-- leaflet plugin -->
-      <script src="js/leaflet.wmslegend.js"></script>
-      <!-- leaflet plugin -->
-
-      <!-- Meteo-France geoservices -->
-      <script src="geoservices.js"></script>
-      <!-- Meteo-France geoservices -->
-
-      <!--script src="js/jquery.progresstimer.js" />
-      <script>
-          var progress = $(".loading-progress").progressTimer({
-              timeLimit: 60,
-              onFinish: function () {
-                  alert("completed!");
+        $('input.switch').on('switchChange.bootstrapSwitch', function(event, state) {
+          $(function() {
+              if (state === false) {
+                  // $('#map3D').hide();
+                  // $('#map').show();
+                  $('#map3d').toggleClass('open');
+              } else {
+                  $('#map3d').toggleClass('open');
+                  // $('#map').hide();
+                  // $('#map3D').show();
               }
           });
-      </script-->
+        });
+
+      </script>
 
     </body>
 </html>
