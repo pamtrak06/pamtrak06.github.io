@@ -13,7 +13,7 @@ var map3d;
 // --------------------------------------------
 initWMSMap = (function() {
     initWMSmap2D();
-    initWMSMap3D();
+    //initWMSMap3D();
 });
 
 // --------------------------------------------
@@ -56,7 +56,7 @@ initWMSMap3D = (function() {
 // --------------------------------------------
 resetWMSMap = (function() {
     resetWMSmap2D();
-    resetWMSMap3D();
+    //resetWMSMap3D();
 });
 
 
@@ -89,7 +89,7 @@ resetWMSMap3D = (function() {
 // --------------------------------------------
 loadWmsMap = (function(url, layer, style, time, reftime, format, bounds, uri) {
     loadWmsmap2D(url, layer, style, time, reftime, format, bounds, uri);
-    loadWmsMap3D(url, layer, style, time, reftime, format, bounds, uri);
+    //loadWmsMap3D(url, layer, style, time, reftime, format, bounds, uri);
 });
 
 // --------------------------------------------
@@ -191,7 +191,7 @@ loadWmsMap3D = (function(url, layer, style, time, reftime, format, bounds, uri) 
 // --------------------------------------------
 fitBounds = (function(bounds, layer) {
     fitBounds2D(bounds, layer);
-    fitBounds3D(bounds, layer);
+    //fitBounds3D(bounds, layer);
 });
 
 // --------------------------------------------
@@ -231,7 +231,7 @@ fitBounds3D = (function(bounds, layer) {
 // --------------------------------------------
 addGeojsonToMap = (function(key) {
     addGeojsonTomap2D(key);
-    addGeojsonToMap3D(key);
+    //addGeojsonToMap3D(key);
 });
 
 // --------------------------------------------
