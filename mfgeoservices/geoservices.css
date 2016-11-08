@@ -90,16 +90,15 @@ td:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
-#map3d{
-    background:blue;
-    height:100px;
-    width:500px;
-    position:relative;
-    left:-520px;
+.open2D{
+    left:60px !important;
 }
-.open{
+.open3D{
+    top:0px !important;
     left:0px !important;
+}
+.close{
+    left:-5000px;
 }
 .transition{
 

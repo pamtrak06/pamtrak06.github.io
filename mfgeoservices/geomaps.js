@@ -7,13 +7,14 @@ var map;
 // CESIUM
 // --------------------------------------------
 var map3d;
+var provider;
 
 // --------------------------------------------
 // Initialize Map
 // --------------------------------------------
 initWMSMap = (function() {
     initWMSmap2D();
-    //initWMSMap3D();
+    initWMSMap3D();
 });
 
 // --------------------------------------------
@@ -35,7 +36,7 @@ initWMSmap2D = (function() {
 // --------------------------------------------
 initWMSMap3D = (function() {
 
-  map3d = new Cesium.Viewer('map3D', {
+  map3d = new Cesium.Viewer('cesiumContainer', {
     imageryProvider : Cesium.createTileMapServiceImageryProvider({
       url : Cesium.buildModuleUrl('Assets/Textures/NaturalEarthII')
     }),
@@ -56,7 +57,7 @@ initWMSMap3D = (function() {
 // --------------------------------------------
 resetWMSMap = (function() {
     resetWMSmap2D();
-    //resetWMSMap3D();
+    resetWMSMap3D();
 });
 
 
@@ -72,6 +73,8 @@ resetWMSmap2D = (function() {
 // --------------------------------------------
 resetWMSMap3D = (function() {
     //initWMSMap3D();
+    provider = null;
+    map3d.imageryLayers.destroy();
 });
 
 // --------------------------------------------
@@ -89,7 +92,7 @@ resetWMSMap3D = (function() {
 // --------------------------------------------
 loadWmsMap = (function(url, layer, style, time, reftime, format, bounds, uri) {
     loadWmsmap2D(url, layer, style, time, reftime, format, bounds, uri);
-    //loadWmsMap3D(url, layer, style, time, reftime, format, bounds, uri);
+    loadWmsMap3D(url, layer, style, time, reftime, format, bounds, uri);
 });
 
 // --------------------------------------------
@@ -168,7 +171,7 @@ loadWmsMap3D = (function(url, layer, style, time, reftime, format, bounds, uri) 
     url = url + "&reference_time=" + reftime;
   }
 
-  var provider = new Cesium.WebMapServiceImageryProvider({
+  provider = new Cesium.WebMapServiceImageryProvider({
       url : url,
       layers : layer,
       parameters : {
@@ -191,7 +194,7 @@ loadWmsMap3D = (function(url, layer, style, time, reftime, format, bounds, uri) 
 // --------------------------------------------
 fitBounds = (function(bounds, layer) {
     fitBounds2D(bounds, layer);
-    //fitBounds3D(bounds, layer);
+    fitBounds3D(bounds, layer);
 });
 
 // --------------------------------------------

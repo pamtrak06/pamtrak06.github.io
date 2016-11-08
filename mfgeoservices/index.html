@@ -39,6 +39,11 @@
             margin: 50px auto;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,.16);
             border-radius: 20px;
+            overflow: hidden;
+            /* Container hidden */
+            position:relative;
+            left:-15px;
+            top:-50px;
       		}
           body {
       			padding-left: 60px;
@@ -63,14 +68,37 @@
               .cesium-viewer-cesiumWidgetContainer, .cesium-widget,
               .cesium-widget canvas {
                   width: 1000px;
-                  height: 100%;
+                  height: 500px;
                   margin: 0;
-                  padding: 0;
+                  box-shadow: 0 4px 8px 0 rgba(0,0,0,.16);
+                  border-radius: 20px;
                   overflow: hidden;
+
               }
-                /*width: 1000px; height: 500px; margin: 50px; padding: 0; overflow: hidden;
-                width: 100%; height: 100%; margin: 50px; padding: 60px; overflow: hidden;*/
             }
+        </style>
+
+        <!-- table, information -->
+        <style>
+              #switch {
+                  margin: 0;
+                  position: absolute;
+                  top: 500px;
+                  right: 30px;
+              }
+              #information {
+                  margin: 0;
+                  /* Container visible */
+                  position: absolute;
+                  top: 600px;
+              }
+              #parameters {
+                  width: 1000px;
+                  margin: 0;
+                  /* Container visible */
+                  position: absolute;
+                  top: 680px;
+              }
         </style>
 
         <!-- SPECIFIC PROJECT -->
@@ -87,20 +115,25 @@
         <div class="col-xs-6">
 
           <div id="map"></div>
-          <!--div id="map3D" class="transition"></div-->
+          <div id="cesiumContainer" class="transition"></div>
 
-          <!--h2 class="h4">Switch 2D/3D</h2>
-          <input id="switch3D" type="checkbox" class="switch" checked-->
+          <div id="switch">
+            <h2 class="h4">Switch 2D/3D</h2>
+            <input id="switch3D" type="checkbox" class="switch">
+          </div>
 
-          <i class="fa fa-hdd-o" aria-hidden="true">>>>This site use <a target="blank" href="https://en.wikipedia.org/wiki/Web_storage">web storage (session)</a> to allow better performance.<br/>
-            If you want to reset it click on <a href="#" id="linkClearCache">"Clear session sorage cache"</a> button to reinitialize capabilities requests.</i>
+          <div id="information">
+            <!--input id="switch3D" type="checkbox" class="switch" checked-->
+            <i class="fa fa-hdd-o" aria-hidden="true">>>>This site use <a target="blank" href="https://en.wikipedia.org/wiki/Web_storage">web storage (session)</a> to allow better performance.<br/>
+              If you want to reset it click on <a href="#" id="linkClearCache">"Clear session sorage cache"</a> button to reinitialize capabilities requests.</i>
+          </div>
           <!--div class="row">
               <div class="col-xs-3">
                 <div class="loading-progress"></div>
               </div>
           </div-->
           <!--div class="loading-progress"></div-->
-          <div>
+          <div id="parameters">
             <table>
               <thead>
                 <tr>
@@ -273,8 +306,10 @@
       <script src="js/leaflet.wmslegend.js"></script>
 
       <!-- Meteo-France geoservices -->
+      <script src="geosapis.js"></script>
+      <script src="geoscesium.js"></script>
+      <script src="geosleaflet.js"></script>
       <script src="geoservices.js"></script>
-      <script src="geomaps.js"></script>
 
       <!--script src="js/jquery.progresstimer.js" />
       <script>
@@ -287,6 +322,9 @@
       </script-->
 
       <script crossorigin="anonymous">
+
+        var mapKey;
+
         // --------------------------------------------
         // Initialisation
         // --------------------------------------------
@@ -299,9 +337,13 @@
             offText: '2D',
             size: 'large'
           });
+          $('#cesiumContainer').hide();
+          $('#map').show();
 
-          // initWMSMap map
-          initWMSMap();
+          // init WMS Map
+          mapKey = "leaflet";
+          initWMSMap("cesium");
+          initWMSMap("leaflet");
 
           // initWMSMap list of Meteo-France WMS geoservice
           loadGeojsonServices("geoservices.geojson");
@@ -334,7 +376,7 @@
         // Fire-event: select WMS geoservice
         $("#geoservices").on("change", function () {
 
-            resetWMSMap();
+            resetWMSMap(mapKey);
 
             clearLayersOptions();
             clearStylesOptions();
@@ -370,8 +412,8 @@
                 // load Geojson shoreline asynchronously
                 var geoserviceSelected = $("#geoservices option:selected").val();
                 var geojsonFile = getGeojsonRessource(geoserviceSelected);
-                key = buildGeojsonKey(geojsonFile);
-                loadGeojsonShoreline(geojsonFile, key);
+                var geojsonkey = buildGeojsonKey(geojsonFile);
+                loadGeojsonShoreline(geojsonFile, geojsonkey);
 
             } else {
 
@@ -461,7 +503,7 @@
             var url = $("#geoservices").val() + "token=" + token;
             var legend = getLegendGraphicImage(getStore("mapLayers"));
 
-            loadWmsMap(url, layer, style, time, reftime, format, bbox, legend);
+            loadWmsMap(mapKey, url, layer, style, time, reftime, format, bbox, legend);
             // change shoreline for new layer loaded
             $("#geojsonShoreline").trigger("change");
 
@@ -472,21 +514,34 @@
         $("#geojsonShoreline").on("change", function () {
             var geoserviceSelected = $("#geoservices option:selected").val();
             var geojsonFile = getGeojsonRessource(geoserviceSelected);
-            key = buildGeojsonKey(geojsonFile);
-            addGeojsonToMap(key);
-            fitBounds(getGeojsonCoordinates(geoserviceSelected), $("#layers").val());
+            var geojsonkey = buildGeojsonKey(geojsonFile);
+            addGeojsonToMap(mapKey, geojsonkey);
+            fitBounds(mapKey, getGeojsonCoordinates(geoserviceSelected), $("#layers").val());
         });
 
+        // Fire-event: switching map
         $('input.switch').on('switchChange.bootstrapSwitch', function(event, state) {
           $(function() {
               if (state === false) {
-                  // $('#map3D').hide();
-                  // $('#map').show();
-                  $('#map3d').toggleClass('open');
+                mapKey = "leaflet";
+                $('#cesiumContainer').hide();
+                $('#map').show();
+                // $(function(){
+                //   setTimeout($('#cesiumContainer').toggleClass('close'), 200);
+                // });
+                // $(function(){
+                //   setTimeout($('#map').toggleClass('open2D'), 200);
+                // });
               } else {
-                  $('#map3d').toggleClass('open');
-                  // $('#map').hide();
-                  // $('#map3D').show();
+                // $(function(){
+                //   setTimeout($('#map').toggleClass('close'), 200);
+                // });
+                // $(function(){
+                //   setTimeout($('#cesiumContainer').toggleClass('open3D'), 200);
+                // });
+                mapKey = "cesium";
+                $('#map').hide();
+                $('#cesiumContainer').show();
               }
           });
         });
