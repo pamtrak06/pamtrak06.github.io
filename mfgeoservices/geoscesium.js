@@ -72,7 +72,7 @@ loadWmsMapCesium = (function(url, layer, style, time, reftime, format, bounds, u
           bbox   : '-90,-180,90,0',
           styles : style
       },
-      //proxy: new Cesium.DefaultProxy('/proxy/')
+      proxy: new Cesium.DefaultProxy('/proxy/')
   });
 
   layerProvider = map3d.imageryLayers.addImageryProvider(provider);
