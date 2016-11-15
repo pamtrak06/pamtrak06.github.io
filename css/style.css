@@ -1,5 +1,5 @@
 /* ==== Google font ==== */
-@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,300,700,900');
 /* === fontawesome === */
 @import url('font-awesome.css');
 /* ==== overwrite bootstrap standard ==== */
@@ -84,7 +84,7 @@ a:hover {
 }
 
 /*==========================================================================
-  Misc & Adjust 
+  Misc & Adjust
  ========================================================================== */
 .row {
 	z-index: 9999;
@@ -331,14 +331,14 @@ section.section {
  --- Parallax ---
 ============================= */
 
-#parallax1{	
-	background-image: url(../img/pamtrak06_7_btfy_3.jpg);
+#parallax1{
+	background-image: url(../images/pamtrak06_7_btfy_3.jpg);
 }
-#parallax2{	
-	background-image: url(../img/geometca_background_3.jpg);
+#parallax2{
+	background-image: url(../images/geometca_background_3.jpg);
 }
-#testimonials{	
-	background-image: url(../img/pamtrak06_9_btfy.jpg);
+#testimonials{
+	background-image: url(../images/pamtrak06_9_btfy.jpg);
 }
 /*===========================
   --- Header & menu ----
@@ -386,7 +386,7 @@ section.section {
 .navbar-nav {
 	float: right;
 	margin-bottom: 0;
-	padding-bottom:0;	
+	padding-bottom:0;
 }
 
 .navbar .navbar-nav > .active > a {
@@ -441,14 +441,14 @@ section.featured h2.slogan {
 	font-size: 48px;
 	font-weight: 900;
 }
-  
+
  /* inner heading */
 section.featured.inner {
 	background: #eee;
 	padding: 150px 0 50px;
 }
-  
-  
+
+
 /* --- Flexslider --- */
 .flexslider {
 	margin: 0;
@@ -496,12 +496,12 @@ section.featured.inner {
 
 .flex-direction-nav .flex-next {
 	right: -70px;
-	background: url(../img/arrow_large_right.png) no-repeat top left;
+	background: url(../images/arrow_large_right.png) no-repeat top left;
 }
 
 .flex-direction-nav .flex-prev {
 	left: -70px;
-	background: url(../img/arrow_large_left.png) no-repeat top left;
+	background: url(../images/arrow_large_left.png) no-repeat top left;
 }
 
 .flex-direction-nav a.flex-next:before {
@@ -527,13 +527,13 @@ section.featured.inner {
 .tp-leftarrow.default {
 	width: 49px !important;
 	height: 98px !important;
-	background: url(../img/arrow_small_left.png) no-Repeat top left;
+	background: url(../images/arrow_small_left.png) no-Repeat top left;
 }
 
 .tp-rightarrow.default {
 	width: 49px !important;
 	height: 98px !important;
-	background: url(../img/arrow_small_right.png) no-Repeat top left;
+	background: url(../images/arrow_small_right.png) no-Repeat top left;
 }
 
 .fullwidthbanner-container {
@@ -550,8 +550,8 @@ section.featured.inner {
 }
 
 .tp-bullets.simplebullets.round .bullet {
-	background: url(../img/bullets-new.png) no-repeat top left;
-}  
+	background: url(../images/bullets-new.png) no-repeat top left;
+}
 
 .tp-caption.large_bold_white {
 	font-size:60px;
@@ -597,13 +597,13 @@ About
 	box-sizing:border-box;
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
-			border-radius:50%;	
+			border-radius:50%;
 	margin: 0 0 20px 0;
 }
 .member-photo img {
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
-			border-radius:50%;	
+			border-radius:50%;
 }
 
 .team-detail h4 {
@@ -651,7 +651,7 @@ nav#filter a {
 }
 
 
-.portfolio-items article img {width:100%;} 
+.portfolio-items article img {width:100%;}
 
 .portfolio-item {
 	display: block;
@@ -742,7 +742,7 @@ nav#filter a {
 	font-size: 18px;
 	font-family: Georgia, sans-serif;
 	line-height: 1.5em;
-}	
+}
 
 /*===========================
   --- Contact ----
@@ -952,7 +952,7 @@ a.scrollup:hover{
 .social-network a.icoLinkedin:hover {
 	background-color:#007bb7;
 }
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
 	color:#fff;
 }
@@ -1080,11 +1080,11 @@ Media queries
 	section.featured {
 		padding-top: 80px;
 	}
-	
+
 	.team-member,.col-lg-4 {
 		margin-bottom: 30px;
 	}
-	
+
 	.stats .col-md-3 {
 		margin-bottom: 30px;
 	}

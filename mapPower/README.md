@@ -1,4 +1,0 @@
-mapPower
-========
-
-Map tips
